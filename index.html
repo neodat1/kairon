@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kairon Analytics | Inteligencia de Datos para Negocios</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <style>
+        /* VARIABLES DE DISEÑO */
+        :root {
+            --primary: #00d2ff; /* Cian tecnológico */
+            --secondary: #004e92; /* Azul profundo */
+            --dark-bg: #0a0f1a; /* Fondo casi negro */
+            --card-bg: #161e2d;
+            --text-light: #f1f5f9;
+            --text-dim: #94a3b8;
+            --accent: #38bdf8;
+        }
+
+        /* RESET GENERAL */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--dark-bg);
+            color: var(--text-light);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        /* NAVEGACIÓN */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 10%;
+            background: rgba(10, 15, 26, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .logo {
+            font-weight: 800;
+            font-size: 1.5rem;
+            letter-spacing: -1px;
+            color: white;
+            text-decoration: none;
+        }
+
+        .logo span { color: var(--primary); }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-dim);
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover { color: var(--primary); }
+
+        /* HERO SECTION */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at top right, #004e9233, transparent),
+                        radial-gradient(circle at bottom left, #00d2ff11, transparent);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            font-weight: 800;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 600px;
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            margin-bottom: 2.5rem;
+        }
+
+        .cta-main {
+            padding: 1rem 2.5rem;
+            background: linear-gradient(45deg, var(--secondary), var(--primary));
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-weight: 600;
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
+            transition: 0.3s transform;
+        }
+
+        .cta-main:hover { transform: translateY(-3px); }
+
+        /* SERVICIOS */
+        .services { padding: 100px 10%; background: #0f172a; }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--primary);
+            transform: translateY(-5px);
+        }
+
+        .card h3 { margin-bottom: 1rem; color: var(--primary); }
+
+        /* CONTACTO */
+        .contact { padding: 100px 10%; }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: var(--card-bg);
+            padding: 3rem;
+            border-radius: 20px;
+        }
+
+        .form-group { margin-bottom: 1.5rem; }
+
+        label { display: block; margin-bottom: 0.5rem; color: var(--text-dim); }
+
+        input, textarea {
+            width: 100%;
+            padding: 1rem;
+            background: #1e293b;
+            border: 1px solid rgba(255,255,255,0.1);
+            color: white;
+            border-radius: 5px;
+        }
+
+        button {
+            width: 100%;
+            padding: 1rem;
+            background: var(--primary);
+            border: none;
+            color: var(--dark-bg);
+            font-weight: 700;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-dim);
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#" class="logo">KAIRON<span>ANALYTICS</span></a>
+        <ul class="nav-links">
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#servicios">Servicios</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+        </ul>
+    </nav>
+
+    <section class="hero" id="inicio">
+        <h1>Datos que cuentan la<br><span>historia de tu éxito</span></h1>
+        <p>Convertimos la complejidad del Big Data en paneles de control claros y estrategias accionables para tu negocio.</p>
+        <a href="#contacto" class="cta-main">Solicitar Consultoría</a>
+    </section>
+
+    <section class="services" id="servicios">
+        <div class="section-title">
+            <h2>Nuestra Especialidad</h2>
+            <p>Soluciones a medida para empresas que buscan liderar su sector.</p>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>01. Análisis de Datos</h3>
+                <p>Identificamos tendencias y anomalías para optimizar tus operaciones diarias.</p>
+            </div>
+            <div class="card">
+                <h3>02. Machine Learning</h3>
+                <p>Modelos predictivos que anticipan la demanda de tus clientes con alta precisión.</p>
+            </div>
+            <div class="card">
+                <h3>03. Visualización</h3>
+                <p>Dashboards en tiempo real (Power BI/Tableau) para que nunca pierdas el control.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contacto">
+        <div class="contact-container">
+            <div class="section-title">
+                <h2>Hablemos de tu proyecto</h2>
+                <p>Cuéntanos tu reto y te diremos cómo los datos pueden resolverlo.</p>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label>Nombre Completo</label>
+                    <input type="text" placeholder="Ej. Juan Pérez">
+                </div>
+                <div class="form-group">
+                    <label>Correo Corporativo</label>
+                    <input type="email" placeholder="juan@empresa.com">
+                </div>
+                <div class="form-group">
+                    <label>Mensaje</label>
+                    <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
+                </div>
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Kairon Analytics. Consultoría Estratégica de Datos.</p>
+    </footer>
+
+</body>
+</html>
