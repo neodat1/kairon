@@ -3,21 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairon Analytics | Inteligencia de Datos para Negocios</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>Kairon Analytics | Data Science & Strategic Consulting</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
     <style>
-        /* VARIABLES DE DISEÑO */
         :root {
-            --primary: #00d2ff; /* Cian tecnológico */
-            --secondary: #004e92; /* Azul profundo */
-            --dark-bg: #0a0f1a; /* Fondo casi negro */
-            --card-bg: #161e2d;
-            --text-light: #f1f5f9;
-            --text-dim: #94a3b8;
-            --accent: #38bdf8;
+            --bg-dark: #05070a;
+            --accent-blue: #00f2ff;
+            --accent-purple: #7000ff;
+            --glass: rgba(255, 255, 255, 0.03);
+            --border-glass: rgba(255, 255, 255, 0.1);
+            --text-main: #ffffff;
+            --text-muted: #94a3b8;
         }
 
-        /* RESET GENERAL */
         * {
             margin: 0;
             padding: 0;
@@ -25,53 +23,61 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--dark-bg);
-            color: var(--text-light);
-            line-height: 1.6;
-            scroll-behavior: smooth;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            overflow-x: hidden;
+            line-height: 1.5;
         }
 
-        /* NAVEGACIÓN */
+        /* Background Effects */
+        .glow {
+            position: fixed;
+            width: 40vw;
+            height: 40vw;
+            background: radial-gradient(circle, rgba(0, 242, 255, 0.07) 0%, transparent 70%);
+            top: -10vw;
+            right: -10vw;
+            z-index: -1;
+        }
+
+        /* Navigation */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 1.5rem 10%;
-            background: rgba(10, 15, 26, 0.95);
+            padding: 1.5rem 8%;
             position: fixed;
             width: 100%;
             top: 0;
+            background: rgba(5, 7, 10, 0.8);
+            backdrop-filter: blur(15px);
             z-index: 1000;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            border-bottom: 1px solid var(--border-glass);
         }
 
-        .logo {
-            font-weight: 800;
-            font-size: 1.5rem;
-            letter-spacing: -1px;
-            color: white;
-            text-decoration: none;
+        .brand {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
-        .logo span { color: var(--primary); }
-
-        .nav-links {
-            display: flex;
-            list-style: none;
-            gap: 2.5rem;
-        }
+        .brand span { color: var(--accent-blue); }
 
         .nav-links a {
+            color: var(--text-muted);
             text-decoration: none;
-            color: var(--text-dim);
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
             font-weight: 500;
             transition: 0.3s;
         }
 
-        .nav-links a:hover { color: var(--primary); }
+        .nav-links a:hover { color: var(--accent-blue); }
 
-        /* HERO SECTION */
+        /* Hero Section */
         .hero {
             height: 100vh;
             display: flex;
@@ -80,186 +86,213 @@
             align-items: center;
             text-align: center;
             padding: 0 10%;
-            background: radial-gradient(circle at top right, #004e9233, transparent),
-                        radial-gradient(circle at bottom left, #00d2ff11, transparent);
+        }
+
+        .hero-tag {
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            padding: 0.5rem 1.2rem;
+            border-radius: 100px;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--accent-blue);
+            margin-bottom: 2rem;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 5vw, 4.5rem);
-            line-height: 1.1;
-            margin-bottom: 1.5rem;
+            font-size: clamp(3rem, 7vw, 5.5rem);
             font-weight: 800;
+            line-height: 1;
+            margin-bottom: 1.5rem;
+            letter-spacing: -2px;
         }
 
         .hero h1 span {
-            background: linear-gradient(90deg, var(--primary), var(--accent));
+            background: linear-gradient(to right, #fff, #64748b);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 700px;
             font-size: 1.2rem;
-            color: var(--text-dim);
-            margin-bottom: 2.5rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
         }
 
-        .cta-main {
-            padding: 1rem 2.5rem;
-            background: linear-gradient(45deg, var(--secondary), var(--primary));
-            color: white;
+        .btn-group {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .btn-primary {
+            background: var(--text-main);
+            color: var(--bg-dark);
+            padding: 1.2rem 2.5rem;
+            border-radius: 12px;
             text-decoration: none;
-            border-radius: 8px;
-            font-weight: 600;
-            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.2);
-            transition: 0.3s transform;
+            font-weight: 700;
+            transition: 0.4s;
         }
 
-        .cta-main:hover { transform: translateY(-3px); }
-
-        /* SERVICIOS */
-        .services { padding: 100px 10%; background: #0f172a; }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 4rem;
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 255, 255, 0.1);
         }
 
-        .section-title h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+        /* Bento Grid Services */
+        .services {
+            padding: 100px 8%;
+        }
 
-        .grid {
+        .bento-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: repeat(2, 250px);
+            gap: 1.5rem;
         }
 
-        .card {
-            background: var(--card-bg);
-            padding: 3rem 2rem;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .bento-item {
+            background: var(--glass);
+            border: 1px solid var(--border-glass);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: 0.4s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bento-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: var(--accent-blue);
+        }
+
+        .bento-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .bento-item p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+        }
+
+        .item-large { grid-column: span 2; }
+
+        /* Form Section */
+        .contact-section {
+            padding: 100px 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .contact-form {
+            background: var(--glass);
+            padding: 3rem;
+            border-radius: 32px;
+            border: 1px solid var(--border-glass);
+        }
+
+        input {
+            width: 100%;
+            padding: 1.2rem;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid var(--border-glass);
+            border-radius: 12px;
+            color: #fff;
+            margin-bottom: 1.5rem;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1.2rem;
+            background: var(--accent-blue);
+            border: none;
+            border-radius: 12px;
+            font-weight: 700;
+            cursor: pointer;
             transition: 0.3s;
         }
 
-        .card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px);
+        .submit-btn:hover {
+            background: #fff;
+            transform: scale(1.02);
         }
 
-        .card h3 { margin-bottom: 1rem; color: var(--primary); }
-
-        /* CONTACTO */
-        .contact { padding: 100px 10%; }
-
-        .contact-container {
-            max-width: 800px;
-            margin: 0 auto;
-            background: var(--card-bg);
-            padding: 3rem;
-            border-radius: 20px;
-        }
-
-        .form-group { margin-bottom: 1.5rem; }
-
-        label { display: block; margin-bottom: 0.5rem; color: var(--text-dim); }
-
-        input, textarea {
-            width: 100%;
-            padding: 1rem;
-            background: #1e293b;
-            border: 1px solid rgba(255,255,255,0.1);
-            color: white;
-            border-radius: 5px;
-        }
-
-        button {
-            width: 100%;
-            padding: 1rem;
-            background: var(--primary);
-            border: none;
-            color: var(--dark-bg);
-            font-weight: 700;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-
-        footer {
-            text-align: center;
-            padding: 3rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
-            color: var(--text-dim);
-            font-size: 0.9rem;
-        }
-
-        @media (max-width: 768px) {
-            .nav-links { display: none; }
+        @media (max-width: 900px) {
+            .bento-grid { grid-template-columns: 1fr; grid-template-rows: auto; }
+            .item-large { grid-column: span 1; }
+            .contact-section { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
+    <div class="glow"></div>
+
     <nav>
-        <a href="#" class="logo">KAIRON<span>ANALYTICS</span></a>
-        <ul class="nav-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#servicios">Servicios</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-        </ul>
+        <div class="brand">KAIRON<span>ANALYTICS</span></div>
+        <div class="nav-links">
+            <a href="#servicios">Servicios</a>
+            <a href="#metodologia">Metodología</a>
+            <a href="#contacto">Proyectos</a>
+            <a href="#contacto" style="color: var(--accent-blue);">Contactar</a>
+        </div>
     </nav>
 
-    <section class="hero" id="inicio">
-        <h1>Datos que cuentan la<br><span>historia de tu éxito</span></h1>
-        <p>Convertimos la complejidad del Big Data en paneles de control claros y estrategias accionables para tu negocio.</p>
-        <a href="#contacto" class="cta-main">Solicitar Consultoría</a>
+    <section class="hero">
+        <div class="hero-tag">Inteligencia Artificial & Big Data</div>
+        <h1><span>Descubre el valor</span><br>oculto en tus datos.</h1>
+        <p>No somos solo consultores. Somos el motor analítico que transforma métricas crudas en ventajas competitivas reales y escalables.</p>
+        <div class="btn-group">
+            <a href="#contacto" class="btn-primary">Agendar Consultoría</a>
+        </div>
     </section>
 
     <section class="services" id="servicios">
-        <div class="section-title">
-            <h2>Nuestra Especialidad</h2>
-            <p>Soluciones a medida para empresas que buscan liderar su sector.</p>
-        </div>
-        <div class="grid">
-            <div class="card">
-                <h3>01. Análisis de Datos</h3>
-                <p>Identificamos tendencias y anomalías para optimizar tus operaciones diarias.</p>
+        <div class="bento-grid">
+            <div class="bento-item item-large">
+                <h3>Advanced Analytics</h3>
+                <p>Implementación de modelos estadísticos avanzados para predecir comportamientos de mercado y optimizar la cadena de suministro.</p>
             </div>
-            <div class="card">
-                <h3>02. Machine Learning</h3>
-                <p>Modelos predictivos que anticipan la demanda de tus clientes con alta precisión.</p>
+            <div class="bento-item">
+                <h3>Machine Learning</h3>
+                <p>Automatización de procesos mediante algoritmos de aprendizaje profundo.</p>
             </div>
-            <div class="card">
-                <h3>03. Visualización</h3>
-                <p>Dashboards en tiempo real (Power BI/Tableau) para que nunca pierdas el control.</p>
+            <div class="bento-item">
+                <h3>Data Architecture</h3>
+                <p>Estructuramos tu ecosistema de datos para que sea escalable, seguro y eficiente.</p>
+            </div>
+            <div class="bento-item item-large">
+                <h3>Business Intelligence 2.0</h3>
+                <p>Dashboards ejecutivos con indicadores clave (KPIs) en tiempo real para una toma de decisiones sin fricciones.</p>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contacto">
-        <div class="contact-container">
-            <div class="section-title">
-                <h2>Hablemos de tu proyecto</h2>
-                <p>Cuéntanos tu reto y te diremos cómo los datos pueden resolverlo.</p>
-            </div>
+    <section class="contact-section" id="contacto">
+        <div>
+            <h2 style="font-size: 3rem; margin-bottom: 2rem;">Impulsa tu <br><span style="color: var(--accent-blue);">próximo nivel.</span></h2>
+            <p style="color: var(--text-muted);">Estamos listos para analizar tus retos técnicos. Escríbenos y un experto senior se pondrá en contacto contigo en menos de 24 horas.</p>
+        </div>
+        <div class="contact-form">
             <form>
-                <div class="form-group">
-                    <label>Nombre Completo</label>
-                    <input type="text" placeholder="Ej. Juan Pérez">
-                </div>
-                <div class="form-group">
-                    <label>Correo Corporativo</label>
-                    <input type="email" placeholder="juan@empresa.com">
-                </div>
-                <div class="form-group">
-                    <label>Mensaje</label>
-                    <textarea rows="4" placeholder="¿En qué podemos ayudarte?"></textarea>
-                </div>
-                <button type="submit">Enviar Mensaje</button>
+                <input type="text" placeholder="Nombre completo" required>
+                <input type="email" placeholder="Email corporativo" required>
+                <input type="text" placeholder="Empresa">
+                <textarea style="width:100%; padding:1.2rem; background:rgba(255,255,255,0.02); border:1px solid var(--border-glass); border-radius:12px; color:#fff; margin-bottom:1.5rem;" rows="4" placeholder="Háblanos de tu proyecto"></textarea>
+                <button class="submit-btn">Enviar Propuesta</button>
             </form>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2024 Kairon Analytics. Consultoría Estratégica de Datos.</p>
+    <footer style="padding: 4rem 8%; border-top: 1px solid var(--border-glass); text-align: center; color: var(--text-muted); font-size: 0.8rem;">
+        <p>&copy; 2025 KAIRON ANALYTICS. INNOVACIÓN BASADA EN EVIDENCIA.</p>
     </footer>
 
 </body>
