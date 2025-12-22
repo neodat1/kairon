@@ -3,261 +3,219 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairon Analytics | Strategic Data Consulting</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700&family=Outfit:wght@300;600;800&display=swap" rel="stylesheet">
+    <title>Kairon Analytics | Consultoría Estratégica de Datos</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary-blue: #00b4d8;
-            --deep-blue: #023e8a;
-            --text-dark: #1a1a1a;
-            --text-light: #64748b;
-            --bg-white: #ffffff;
-            --bg-soft: #f8fafc;
+            --primary-cyan: #00d2ff;
+            --deep-blue: #0a192f;
+            --white: #ffffff;
+            --text-gray: #64748b;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-white);
-            color: var(--text-dark);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--white);
+            color: var(--deep-blue);
             line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3, .logo { font-family: 'Outfit', sans-serif; }
-
-        /* HEADER PROFESIONAL */
+        /* NAVEGACIÓN */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 10%;
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
+            padding: 1rem 8%;
+            background: rgba(255, 255, 255, 0.95);
             position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
-            border-bottom: 1px solid #f1f5f9;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.05);
         }
 
-        .logo {
-            font-size: 1.4rem;
-            font-weight: 800;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            color: var(--text-dark);
+        .nav-logo img {
+            height: 60px; /* Ajuste para que luzca el logo que creamos */
+            display: block;
         }
-
-        .logo span { color: var(--primary-blue); font-weight: 300; }
 
         .nav-links a {
             text-decoration: none;
-            color: var(--text-dark);
-            font-size: 0.85rem;
+            color: var(--deep-blue);
             font-weight: 600;
-            margin-left: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: color 0.3s;
+            margin-left: 2.5rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
         }
 
-        .nav-links a:hover { color: var(--primary-blue); }
+        .nav-links a:hover { color: var(--primary-cyan); }
 
-        /* HERO SECTION - LIMPIO Y EJECUTIVO */
+        /* HERO SECTION CON IMAGEN INTEGRADA */
         .hero {
             height: 100vh;
+            background: linear-gradient(rgba(10, 25, 47, 0.7), rgba(10, 25, 47, 0.7)), 
+                        url('https://images.unsplash.com/photo-1551288049-bbda38a5f97b?auto=format&fit=crop&q=80&w=2070'); /* Imagen de análisis de datos profesional */
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
+            text-align: center;
+            color: var(--white);
             padding: 0 10%;
-            background: radial-gradient(circle at 80% 20%, #e0f7fa 0%, transparent 40%);
+            margin-top: 60px;
         }
 
-        .hero-content {
-            max-width: 900px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            line-height: 1.1;
+        .hero-content h1 {
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 800;
-            color: var(--text-dark);
             margin-bottom: 1.5rem;
-            letter-spacing: -2px;
+            line-height: 1.2;
         }
 
-        .hero h1 b {
-            color: var(--primary-blue);
-            font-weight: 800;
-        }
+        .hero-content h1 span { color: var(--primary-cyan); }
 
-        .hero p {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            max-width: 650px;
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 700px;
             margin: 0 auto 2.5rem;
-            font-weight: 300;
+            opacity: 0.9;
         }
 
-        .cta-button {
-            padding: 1.2rem 3rem;
-            background: var(--text-dark);
-            color: white;
+        .btn-main {
+            padding: 1.2rem 2.5rem;
+            background: var(--primary-cyan);
+            color: var(--deep-blue);
             text-decoration: none;
-            font-weight: 600;
-            border-radius: 4px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 0.8rem;
-            transition: all 0.3s;
-            border: 1px solid var(--text-dark);
-        }
-
-        .cta-button:hover {
-            background: transparent;
-            color: var(--text-dark);
-        }
-
-        /* SECCIÓN DE SERVICIOS - ESTILO MINIMAL */
-        .services {
-            padding: 100px 10%;
-            background-color: var(--bg-soft);
-        }
-
-        .section-label {
-            color: var(--primary-blue);
             font-weight: 700;
+            border-radius: 8px;
             text-transform: uppercase;
-            letter-spacing: 3px;
-            font-size: 0.75rem;
-            display: block;
-            margin-bottom: 1rem;
+            letter-spacing: 1px;
+            transition: 0.3s;
+        }
+
+        .btn-main:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 210, 255, 0.3);
+        }
+
+        /* SECCIÓN SERVICIOS */
+        .services {
+            padding: 100px 8%;
             text-align: center;
+        }
+
+        .services h2 {
+            font-size: 2.5rem;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .services h2::after {
+            content: '';
+            width: 80px;
+            height: 4px;
+            background: var(--primary-cyan);
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
         }
 
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 4rem;
-            margin-top: 4rem;
+            gap: 2rem;
         }
 
-        .service-item {
-            position: relative;
-        }
-
-        .service-item h3 {
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .service-item h3::before {
-            content: "";
-            width: 20px;
-            height: 2px;
-            background: var(--primary-blue);
-        }
-
-        .service-item p {
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
-        /* CONTACTO - PROFESIONAL */
-        .contact {
-            padding: 120px 10%;
-            text-align: center;
-        }
-
-        .contact h2 { font-size: 3rem; margin-bottom: 1rem; }
-
-        .contact-link {
-            font-family: 'Outfit', sans-serif;
-            font-size: 2rem;
-            color: var(--primary-blue);
-            text-decoration: none;
-            font-weight: 600;
-            border-bottom: 2px solid transparent;
+        .card {
+            padding: 3rem 2rem;
+            border-radius: 20px;
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
             transition: 0.3s;
         }
 
-        .contact-link:hover {
-            border-bottom: 2px solid var(--primary-blue);
+        .card:hover {
+            background: var(--white);
+            border-color: var(--primary-cyan);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+            transform: translateY(-10px);
         }
 
+        .card h3 {
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+            color: var(--deep-blue);
+        }
+
+        /* FOOTER */
         footer {
-            padding: 4rem 10%;
-            border-top: 1px solid #eee;
-            display: flex;
-            justify-content: space-between;
-            color: var(--text-light);
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            background: var(--deep-blue);
+            color: var(--white);
+            padding: 4rem 8%;
+            text-align: center;
+        }
+
+        .footer-logo img {
+            height: 50px;
+            filter: brightness(0) invert(1); /* Pone el logo en blanco para el fondo oscuro */
+            margin-bottom: 1.5rem;
         }
 
         @media (max-width: 768px) {
             .nav-links { display: none; }
-            .hero { text-align: left; }
-            footer { flex-direction: column; gap: 1rem; text-align: center; }
+            .hero-content h1 { font-size: 2.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Kairon <span>Analytics</span></div>
+        <div class="nav-logo">
+            <img src="https://i.ibb.co/L6V2f8W/logo-kairon.png" alt="Kairon Analytics Logo">
+        </div>
         <div class="nav-links">
+            <a href="#inicio">Inicio</a>
             <a href="#servicios">Servicios</a>
-            <a href="#nosotros">Expertise</a>
             <a href="#contacto">Contacto</a>
         </div>
     </nav>
 
-    <section class="hero">
+    <section class="hero" id="inicio">
         <div class="hero-content">
-            <span class="section-label">Data Intelligence Agency</span>
-            <h1>Análisis de precisión para <b>líderes globales.</b></h1>
-            <p>Transformamos infraestructuras de datos complejas en claridad estratégica y crecimiento medible.</p>
-            <a href="#contacto" class="cta-button">Empezar Proyecto</a>
+            <h1>Expertos en <span>Análisis de Datos</span><br>para el mundo real.</h1>
+            <p>En Kairon Analytics, transformamos la complejidad técnica en claridad estratégica para que tu empresa nunca deje de crecer.</p>
+            <a href="#contacto" class="btn-main">Hablemos de tu proyecto</a>
         </div>
     </section>
 
     <section class="services" id="servicios">
-        <span class="section-label">Nuestras Soluciones</span>
-        <h2 style="text-align: center; font-size: 2.5rem;">Capacidades Analíticas</h2>
-        
+        <h2>Nuestras Soluciones</h2>
         <div class="grid">
-            <div class="service-item">
-                <h3>Data Science</h3>
-                <p>Modelado avanzado y algoritmos personalizados para resolver problemas de negocio críticos y predecir tendencias de mercado.</p>
+            <div class="card">
+                <h3>Big Data Strategy</h3>
+                <p>Diseñamos la infraestructura necesaria para que tus datos sean un activo, no una carga.</p>
             </div>
-            <div class="service-item">
-                <h3>BI & Visualización</h3>
-                <p>Arquitectura de paneles de control intuitivos que permiten una lectura inmediata del rendimiento operativo.</p>
+            <div class="card">
+                <h3>Machine Learning</h3>
+                <p>Modelos predictivos que anticipan tendencias y optimizan tus procesos automáticamente.</p>
             </div>
-            <div class="service-item">
-                <h3>Data Strategy</h3>
-                <p>Consultoría de alto nivel para alinear la arquitectura de datos con los objetivos financieros de la compañía.</p>
+            <div class="card">
+                <h3>Business Intelligence</h3>
+                <p>Dashboards de alto impacto que permiten tomar decisiones basadas en evidencia en segundos.</p>
             </div>
         </div>
     </section>
 
-    <section class="contact" id="contacto">
-        <h2>¿Hablamos?</h2>
-        <p style="margin-bottom: 2rem; color: var(--text-light);">Para consultas exclusivas y proyectos a medida.</p>
-        <a href="mailto:solutions@kairon.com" class="contact-link">solutions@kairon.com</a>
-    </section>
-
-    <footer>
-        <div>© 2025 Kairon Analytics Group</div>
-        <div>Innovación · Integridad · Resultados</div>
+    <footer id="contacto">
+        <div class="footer-logo">
+             <img src="https://i.ibb.co/L6V2f8W/logo-kairon.png" alt="Kairon Logo">
+        </div>
+        <p>¿Listo para liderar con datos?</p>
+        <p style="margin-top: 1rem; opacity: 0.6;">&copy; 2025 Kairon Analytics. Todos los derechos reservados.</p>
     </footer>
 
 </body>
