@@ -3,171 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairon Analytics | Ingeniería de Datos de Precisión</title>
-    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Kairon Analytics | Strategic Data Engineering</title>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700&family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyan-kairon: #00d2ff;
-            --bg-black: #050505;
-            --surface: #0a0a0a;
-            --border: #1a1a1a;
-            --text-main: #e2e2e2;
-            --text-muted: #888888;
+            --cyan: #00d2ff;
+            --bg: #030305;
+            --surface: #0a0c12;
+            --border: #1a1e26;
+            --text: #e2e8f0;
+            --text-dim: #94a3b8;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-main);
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: var(--bg);
+            color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; font-weight: 500; }
+        h1, h2, h3 { font-family: 'Space Grotesk', sans-serif; }
 
-        /* NAVEGACIÓN MINIMALISTA */
+        /* NAVEGACIÓN DE ÉLITE */
         nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.5rem 10%;
-            position: absolute;
+            padding: 2.5rem 8%;
+            position: fixed;
             width: 100%;
             top: 0;
             z-index: 1000;
+            background: linear-gradient(to bottom, var(--bg), transparent);
         }
 
         .logo {
-            font-size: 1.2rem;
-            letter-spacing: 6px;
+            font-size: 1.1rem;
+            letter-spacing: 7px;
             font-weight: 700;
             text-transform: uppercase;
+            color: var(--white);
         }
 
-        .logo span { color: var(--cyan-kairon); font-weight: 300; }
+        .logo span { color: var(--cyan); font-weight: 300; }
 
-        /* HERO: IMPACTO VISUAL INMEDIATO */
+        /* HERO CINEMATOGRÁFICO */
         .hero {
             height: 100vh;
             display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 0 10%;
+            align-items: center;
+            padding: 0 8%;
+            background: radial-gradient(circle at 80% 50%, rgba(0, 210, 255, 0.08), transparent 45%);
             position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid var(--border);
         }
 
-        .hero-bg {
+        .hero::before {
+            content: '';
             position: absolute;
-            right: 0;
-            top: 0;
-            width: 50%;
-            height: 100%;
-            background: linear-gradient(to left, var(--bg-black), transparent),
-                        url('https://images.unsplash.com/photo-1558494949-ef010cbdcc4b?auto=format&fit=crop&q=80&w=2000');
+            top: 0; right: 0; width: 50%; height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=2032&auto=format&fit=crop');
             background-size: cover;
             background-position: center;
-            opacity: 0.4;
-            z-index: 0;
+            opacity: 0.2;
+            mask-image: linear-gradient(to left, black, transparent);
+            -webkit-mask-image: linear-gradient(to left, black, transparent);
         }
 
-        .hero-content { position: relative; z-index: 1; max-width: 850px; }
+        .hero-content { max-width: 900px; position: relative; z-index: 2; }
 
-        .hero-content h1 {
-            font-size: clamp(3rem, 7vw, 6rem);
-            line-height: 0.9;
+        .hero-label {
+            display: inline-block;
+            color: var(--cyan);
+            letter-spacing: 5px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero h1 {
+            font-size: clamp(3.5rem, 8vw, 6.5rem);
+            line-height: 0.85;
             letter-spacing: -4px;
             margin-bottom: 2rem;
+            font-weight: 700;
         }
 
-        .hero-content h1 b { color: var(--cyan-kairon); font-weight: 500; }
+        .hero h1 b { color: var(--cyan); font-weight: 700; }
 
-        .hero-content p {
+        .hero p {
             font-size: 1.4rem;
-            color: var(--text-muted);
-            max-width: 550px;
-            font-weight: 300;
-            border-left: 2px solid var(--cyan-kairon);
-            padding-left: 20px;
+            color: var(--text-dim);
+            max-width: 600px;
+            font-weight: 200;
         }
 
-        /* SECCIÓN DE SERVICIOS: ESTRUCTURA DE VALOR */
+        /* ESTRUCTURA DE VALOR */
         .expertise {
-            padding: 150px 10%;
+            padding: 150px 8%;
+            background: var(--bg);
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
+            gap: 120px;
         }
 
         .expertise-text h2 {
-            font-size: 3rem;
-            line-height: 1;
-            margin-bottom: 2rem;
+            font-size: 4rem;
+            line-height: 0.9;
+            margin-bottom: 2.5rem;
+            letter-spacing: -2px;
         }
 
-        .expertise-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 40px;
+        .expertise-list { display: flex; flex-direction: column; gap: 3rem; }
+
+        .expert-card {
+            padding-left: 30px;
+            border-left: 1px solid var(--border);
+            transition: 0.5s;
         }
 
-        .service-item {
-            padding-bottom: 30px;
-            border-bottom: 1px solid var(--border);
-        }
+        .expert-card:hover { border-left: 1px solid var(--cyan); }
 
-        .service-item h3 {
-            font-size: 0.8rem;
+        .expert-card h3 {
+            color: var(--cyan);
+            font-size: 0.75rem;
             text-transform: uppercase;
             letter-spacing: 3px;
-            color: var(--cyan-kairon);
-            margin-bottom: 10px;
+            margin-bottom: 1rem;
         }
 
-        .service-item p {
-            font-size: 1.1rem;
-            color: var(--text-main);
-            font-weight: 400;
-        }
+        .expert-card p { font-size: 1.2rem; font-weight: 300; color: var(--text); }
 
-        /* BANNER DINÁMICO ABSTRACTO */
-        .data-visual {
-            height: 400px;
-            margin: 0 10%;
-            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072') center/cover;
-            border-radius: 4px;
-            filter: grayscale(1) brightness(0.7);
+        /* SECCIÓN VISUAL ABSTRACTA */
+        .data-stream {
+            height: 500px;
+            margin: 0 4%;
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') fixed center/cover;
             border: 1px solid var(--border);
+            border-radius: 4px;
+            filter: saturate(0) brightness(0.6);
         }
 
-        /* CONTACTO: CIERRE EJECUTIVO */
+        /* CIERRE Y CONVERSIÓN */
         .contact {
-            padding: 150px 10%;
+            padding: 150px 8%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 80px;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 100px;
+            align-items: start;
         }
 
         .contact-form {
             background: var(--surface);
-            padding: 4rem;
+            padding: 5rem;
             border: 1px solid var(--border);
+            position: relative;
         }
 
-        .contact-form h2 { margin-bottom: 3rem; font-size: 2.5rem; }
-
-        .input-group { margin-bottom: 2.5rem; }
-
-        .input-group label {
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--text-muted);
-            margin-bottom: 10px;
-            display: block;
+        .contact-form::before {
+            content: ''; position: absolute; top: -1px; left: -1px; width: 40px; height: 40px;
+            border-top: 2px solid var(--cyan); border-left: 2px solid var(--cyan);
         }
 
         input, textarea {
@@ -175,42 +174,46 @@
             background: transparent;
             border: none;
             border-bottom: 1px solid var(--border);
-            color: var(--white);
-            padding: 10px 0;
+            color: var(--text);
+            padding: 1.5rem 0;
             font-family: inherit;
             font-size: 1.1rem;
             outline: none;
-            transition: 0.3s;
+            transition: 0.4s;
         }
 
-        input:focus { border-color: var(--cyan-kairon); }
+        input:focus { border-bottom: 1px solid var(--cyan); }
 
-        .btn {
-            background: var(--cyan-kairon);
-            color: var(--bg-black);
-            padding: 1.2rem 3.5rem;
+        .btn-call {
+            margin-top: 3rem;
+            background: var(--cyan);
+            color: var(--bg);
+            padding: 1.5rem 4rem;
             border: none;
-            text-transform: uppercase;
             font-weight: 700;
-            letter-spacing: 2px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
             cursor: pointer;
             transition: 0.3s;
         }
 
-        .btn:hover { background: var(--text-main); }
+        .btn-call:hover { transform: translateY(-5px); box-shadow: 0 10px 30px rgba(0, 210, 255, 0.3); }
 
         footer {
-            padding: 5rem 10%;
+            padding: 6rem 8%;
             border-top: 1px solid var(--border);
-            text-align: center;
-            font-size: 0.7rem;
-            letter-spacing: 3px;
-            color: var(--text-muted);
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.65rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: var(--text-dim);
         }
 
-        @media (max-width: 1024px) {
-            .hero-bg { display: none; }
-            .expertise, .contact { grid-template-columns: 1fr; }
+        @media (max-width: 1100px) {
+            .hero, .expertise, .contact { grid-template-columns: 1fr; padding-top: 120px; }
+            .hero::before { width: 100%; opacity: 0.1; }
         }
     </style>
 </head>
@@ -222,64 +225,55 @@
 
     <main>
         <section class="hero">
-            <div class="hero-bg"></div>
             <div class="hero-content">
-                <h1>Ingeniería de datos para <b>Líderes Globales.</b></h1>
-                <p>Usted no requiere informes. Usted requiere infraestructura de inteligencia que garantice resultados críticos.</p>
+                <span class="hero-label">High-Performance Data Engineering</span>
+                <h1>Precision <b>Intelligence.</b></h1>
+                <p>Usted no requiere visualización. Usted requiere una infraestructura de datos capaz de sostener ventajas competitivas exponenciales.</p>
             </div>
         </section>
 
         <section class="expertise">
             <div class="expertise-text">
-                <h2>Excelencia<br>Operativa.</h2>
-                <p style="color: var(--text-muted); margin-top: 20px;">Soluciones diseñadas para corporaciones que demandan precisión absoluta y escalabilidad.</p>
+                <h2>Soluciones de<br>Grado Industrial.</h2>
+                <p style="color: var(--text-dim); margin-top: 2rem;">Ingeniería diseñada para la gobernanza y escalabilidad de activos digitales críticos.</p>
             </div>
-            <div class="expertise-grid">
-                <div class="service-item">
-                    <h3>01 / Arquitectura de Datos</h3>
-                    <p>Diseño de flujos de información robustos y seguros bajo estándares de gobernanza internacional.</p>
+            <div class="expertise-list">
+                <div class="expert-card">
+                    <h3>01 / Arquitecturas Cuánticas</h3>
+                    <p>Diseño de ecosistemas de datos distribuidos con integridad absoluta de la información.</p>
                 </div>
-                <div class="service-item">
+                <div class="expert-card">
                     <h3>02 / Inteligencia Predictiva</h3>
-                    <p>Modelado matemático avanzado para anticipar riesgos operativos y optimizar márgenes de beneficio.</p>
+                    <p>Modelado avanzado de riesgos y optimización de flujos operativos para la alta dirección.</p>
                 </div>
-                <div class="service-item">
-                    <h3>03 / Business Governance</h3>
-                    <p>Integración de fuentes de verdad única para la toma de decisiones en niveles directivos.</p>
+                <div class="expert-card">
+                    <h3>03 / Auditoría Analítica</h3>
+                    <p>Evaluación técnica de infraestructuras para garantizar la eficiencia y seguridad del dato.</p>
                 </div>
             </div>
         </section>
 
-        <div class="data-visual"></div>
+        <div class="data-stream"></div>
 
         <section class="contact">
             <div>
-                <h2>Su infraestructura<br>es su activo más<br>valioso.</h2>
-                <p style="color: var(--text-muted); margin-top: 2rem;">Un consultor senior evaluará su arquitectura actual para proponer mejoras de alto impacto.</p>
+                <h2 style="font-size: 3.5rem; line-height: 0.9;">Hablemos de su<br>infraestructura.</h2>
+                <p style="color: var(--text-dim); margin-top: 3rem; max-width: 400px;">Consulte con un especialista senior para definir la hoja de ruta técnica de su organización.</p>
             </div>
             <div class="contact-form">
-                <h2>Consultar.</h2>
                 <form>
-                    <div class="input-group">
-                        <label>Institución / Empresa</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Email Corporativo</label>
-                        <input type="email" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Requerimiento Técnico</label>
-                        <textarea rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Solicitar Diagnóstico</button>
+                    <input type="text" placeholder="Entidad / Corporación" required>
+                    <input type="email" placeholder="Dirección de Email Corporativo" required>
+                    <textarea rows="4" placeholder="Defina el desafío técnico de su proyecto"></textarea>
+                    <button type="submit" class="btn-call">Solicitar Auditoría Técnica</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        © 2025 KAIRON ANALYTICS GROUP / ESTRATEGIA BASADA EN EVIDENCIA
+        <div>© 2025 KAIRON ANALYTICS / BEYOND EVIDENCE</div>
+        <div>LONDON / MADRID / GLOBAL</div>
     </footer>
 
 </body>
