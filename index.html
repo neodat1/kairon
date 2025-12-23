@@ -3,213 +3,173 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIRON | Precision Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@900&family=IBM+Plex+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>KAIRON | Strategic Decision Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #000000;
-            --text: #ffffff;
-            --accent: #00d2ff;
-            --border: #1a1a1a;
+            --bg: #f9f8f6; /* Blanco hueso premium */
+            --text: #1a1a1a;
+            --accent: #000000;
+            --border: #e0ddd7;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'IBM Plex Mono', monospace;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.2;
-            overflow-x: hidden;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
         }
 
-        /* HEADER TÉCNICO */
+        /* NAVEGACIÓN SILENCIOSA */
         nav {
-            padding: 2rem;
+            padding: 3rem 8%;
             display: flex;
             justify-content: space-between;
+            align-items: center;
             border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            background: var(--bg);
-            z-index: 1000;
-            font-size: 0.7rem;
-            letter-spacing: 2px;
         }
 
-        /* HERO: IMPACTO BRUTAL */
+        .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -1px; }
+        .status { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
+
+        /* HERO: LA CLARIDAD ES PODER */
         .hero {
-            padding: 10rem 5%;
-            border-bottom: 1px solid var(--border);
+            padding: 10rem 8%;
+            max-width: 1400px;
         }
+
+        .hero span { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: #888; }
 
         .hero h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(4rem, 20vw, 18rem);
-            font-weight: 900;
-            letter-spacing: -0.08em;
-            line-height: 0.75;
-            margin-bottom: 5rem;
-        }
-
-        .hero-meta {
-            display: grid;
-            grid-template-columns: 2fr 1fr;
-            gap: 10%;
-            align-items: flex-end;
-        }
-
-        .hero-meta p {
-            font-size: 2.5rem;
-            font-weight: 400;
+            font-size: clamp(3rem, 6vw, 5.5rem);
+            font-weight: 300;
+            line-height: 1.1;
             letter-spacing: -2px;
-            color: #ccc;
+            margin-top: 2rem;
+            margin-bottom: 4rem;
         }
 
-        /* GRID DE EJECUCIÓN */
-        .grid {
+        .hero h1 b { font-weight: 700; color: var(--accent); }
+
+        /* LA TRIPLE SÍNTESIS: EL VALOR REAL */
+        .values {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
+            grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
 
-        .box {
-            padding: 8rem 10%;
-            border: 0.5px solid var(--border);
+        .v-box {
+            padding: 5rem 3rem;
+            border-right: 1px solid var(--border);
+        }
+
+        .v-box:last-child { border-right: none; }
+
+        .v-box h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; }
+        .v-box p { font-size: 1rem; color: #555; font-weight: 400; }
+
+        /* SECCIÓN DE IMPACTO: EL ARGUMENTO */
+        .impact {
+            padding: 10rem 8%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 100px;
+            background: #fff;
+        }
+
+        .impact h2 { font-size: 3rem; letter-spacing: -1px; line-height: 1.1; }
+        .impact p { font-size: 1.25rem; color: #666; }
+
+        /* CONVERSIÓN: ACCESO RESTRINGIDO */
+        .contact {
+            padding: 12rem 8%;
+            text-align: center;
+        }
+
+        .contact h2 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 3rem; }
+
+        .btn-premium {
+            display: inline-block;
+            background: var(--accent);
+            color: #fff;
+            padding: 1.5rem 4rem;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1rem;
+            letter-spacing: 1px;
             transition: 0.3s;
         }
 
-        .box:hover { background: #050505; }
-
-        .box span { color: var(--accent); font-weight: 700; margin-bottom: 2rem; display: block; }
-
-        .box h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: 3.5rem;
-            margin-bottom: 2rem;
-            letter-spacing: -3px;
-        }
-
-        .box p {
-            font-size: 1.1rem;
-            color: #555;
-            line-height: 1.5;
-            max-width: 450px;
-        }
-
-        /* SECCIÓN VISUAL SIN RELLENO */
-        .visual-block {
-            height: 60vh;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop');
-            background-size: cover;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            filter: grayscale(1);
-        }
-
-        /* CTA: EL FILTRO DEFINITIVO */
-        .cta {
-            padding: 12rem 5%;
-            text-align: left;
-        }
-
-        .cta h2 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(3rem, 12vw, 10rem);
-            line-height: 0.8;
-            letter-spacing: -6px;
-            margin-bottom: 5rem;
-        }
-
-        .btn {
-            display: inline-block;
-            background: var(--text);
-            color: var(--bg);
-            padding: 2.5rem 6rem;
-            font-size: 2rem;
-            font-weight: 900;
-            text-decoration: none;
-            transition: 0.2s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .btn:hover { background: var(--accent); transform: scale(1.05); }
+        .btn-premium:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
 
         footer {
-            padding: 4rem 5%;
+            padding: 4rem 8%;
+            border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
-            color: #222;
-            font-size: 0.7rem;
-            border-top: 1px solid var(--border);
+            font-size: 0.75rem;
+            color: #999;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         @media (max-width: 900px) {
-            .hero-meta, .grid { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 5rem; }
+            .values, .impact { grid-template-columns: 1fr; }
+            .v-box { border-right: none; border-bottom: 1px solid var(--border); }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div>KAIRON_STRATEGIC_SYSTEMS</div>
-        <div style="color: var(--accent);">V.2025_CORE_ACTIVE</div>
+        <div class="logo">Kairon.</div>
+        <div class="status">Intelligence Unit / 2025</div>
     </nav>
 
     <main>
         <section class="hero">
-            <h1>MONEY<br>LOGIC.</h1>
-            <div class="hero-meta">
-                <p>Usted no tiene un problema de datos. Tiene un problema de <b>retorno.</b></p>
-                <div style="font-size: 0.7rem; color: #444; text-align: right;">
-                    SÍNTESIS DE ALTO NIVEL:<br>
-                    ECONOMETRÍA + BIG DATA + COMPORTAMIENTO
-                </div>
+            <span>The Synthesis of Certainty</span>
+            <h1>Diseñamos las arquitecturas de <b>datos</b> que ejecutan las decisiones más <b>críticas</b> del mercado.</h1>
+        </section>
+
+        <section class="values">
+            <div class="v-box">
+                <h3>Economics.</h3>
+                <p>Modelado causal de alta fidelidad para identificar ineficiencias de capital y optimizar el EBITDA mediante rigor científico.</p>
+            </div>
+            <div class="v-box">
+                <h3>Data Science.</h3>
+                <p>Ingeniería de infraestructuras masivas que transforman variables complejas en radares de oportunidad en tiempo real.</p>
+            </div>
+            <div class="v-box">
+                <h3>Behavior.</h3>
+                <p>Decodificación de la psicología de mercado para predecir la demanda y aumentar el valor neto por cliente con precisión matemática.</p>
             </div>
         </section>
 
-        <section class="grid">
-            <div class="box">
-                <span>[ ARBITRAJE FINANCIERO ]</span>
-                <h2>Captura de Margen.</h2>
-                <p>Aplicamos rigor económico para encontrar el flujo de caja que su software genérico ignora. No analizamos, corregimos el EBITDA.</p>
+        <section class="impact">
+            <div>
+                <h2>Su empresa no necesita más información.<br>Necesita dirección.</h2>
             </div>
-            <div class="box">
-                <span>[ ARQUITECTURA DE DATOS ]</span>
-                <h2>Ingeniería de Poder.</h2>
-                <p>Construimos infraestructuras que transforman variables masivas en una sola dirección de ataque. Datos convertidos en ventaja injusta.</p>
-            </div>
-            <div class="box">
-                <span>[ CIENCIA CONDUCTUAL ]</span>
-                <h2>Demanda Predictiva.</h2>
-                <p>Modelamos la psicología detrás de la compra para forzar la ventaja competitiva antes de que el mercado reaccione.</p>
-            </div>
-            <div class="box">
-                <span>[ RESULTADOS ]</span>
-                <h2>Intervención Total.</h2>
-                <p>No entregamos reportes de 50 páginas. Instalamos soluciones técnicas que se reflejan en su balance contable. Punto.</p>
+            <div>
+                <p>La mayoría de las organizaciones se ahogan en reportes descriptivos que no mueven la aguja. Nuestra intervención se centra en la ejecución: si los datos no generan un retorno medible, no son inteligencia.</p>
             </div>
         </section>
 
-        <div class="visual-block">
-            <div style="border: 1px solid var(--accent); padding: 2rem; background: rgba(0,0,0,0.9); color: var(--accent); font-weight: 700;">
-                ANALYSIS_SYSTEM: CRITICAL_EXECUTION_ONLY
-            </div>
-        </div>
-
-        <section class="cta">
-            <h2>¿SOLUCIÓN<br>O RUIDO?</h2>
-            <a href="mailto:admin@kairon.com" class="btn">INICIAR AUDITORÍA</a>
-            <p style="margin-top: 4rem; color: #222;">LIMITADO A PROYECTOS DE ALTO IMPACTO.</p>
+        <section class="contact">
+            <h2>Hablemos de impacto.</h2>
+            <a href="mailto:admin@kairon.com" class="btn-premium">Solicitar Auditoría Senior</a>
+            <p style="margin-top: 3rem; color: #999; font-size: 0.8rem; letter-spacing: 2px;">DISPONIBILIDAD LIMITADA PARA EL Q1</p>
         </section>
     </main>
 
     <footer>
-        <div>KAIRON ANALYTICS | LONDON - MADRID</div>
-        <div>MSc. ECON / MSc. DATA / MSc. BI</div>
+        <div>Kairon Analytics Group</div>
+        <div>MSc. Economy / MSc. Data Science / MSc. BI</div>
     </footer>
 
 </body>
