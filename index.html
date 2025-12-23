@@ -3,248 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairon Analytics | Inteligencia Estratégica</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;600;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>KAIRON | Estrategia de Datos de Grado Militar</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyan: #00d2ff;
-            --bg: #050505;
-            --surface: #0a0a0c;
-            --border: #1a1a1c;
+            --neon: #00d2ff;
+            --bg: #000000;
             --white: #ffffff;
-            --gray: #88888e;
+            --gray: #1a1a1a;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             background-color: var(--bg);
             color: var(--white);
-            line-height: 1.4;
-            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; }
+        /* TIPOGRAFÍA BRUTALISTA */
+        h1 { font-family: 'Inter', sans-serif; font-weight: 900; text-transform: uppercase; }
 
-        /* NAV QUIRÚRGICA */
+        /* HEADER MINIMALISTA */
         nav {
+            padding: 3rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2rem 8%;
-            position: fixed;
-            width: 100%;
-            background: rgba(5, 5, 5, 0.8);
-            backdrop-filter: blur(15px);
-            z-index: 1000;
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--gray);
         }
 
-        .logo { font-weight: 800; letter-spacing: 5px; font-size: 1rem; }
-        .logo span { color: var(--cyan); font-weight: 300; }
+        .logo { font-weight: 700; letter-spacing: 10px; font-size: 1.2rem; }
 
-        /* HERO: IMPACTO EN NEGOCIOS */
+        /* HERO DE IMPACTO TOTAL */
         .hero {
-            height: 100vh;
+            padding: 100px 6%;
+            min-height: 80vh;
             display: flex;
-            align-items: center;
-            padding: 0 8%;
-            position: relative;
-            background: radial-gradient(circle at 80% 20%, rgba(0, 210, 255, 0.1), transparent 40%);
-        }
-
-        .hero-content { max-width: 900px; z-index: 2; }
-
-        .tag {
-            color: var(--cyan);
-            font-size: 0.7rem;
-            letter-spacing: 4px;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            display: block;
+            flex-direction: column;
+            justify-content: center;
+            border-bottom: 1px solid var(--gray);
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 7vw, 6rem);
-            line-height: 0.85;
-            letter-spacing: -3px;
-            margin-bottom: 2.5rem;
+            font-size: clamp(4rem, 15vw, 12rem);
+            line-height: 0.8;
+            letter-spacing: -5px;
+            margin-bottom: 4rem;
         }
 
-        .hero h1 b { color: var(--cyan); font-weight: 300; }
+        .hero h1 span { color: var(--neon); -webkit-text-stroke: 1px var(--neon); -webkit-text-fill-color: transparent; }
 
-        .hero p {
-            font-size: 1.3rem;
-            color: var(--gray);
-            max-width: 550px;
-            margin-bottom: 3rem;
-        }
-
-        /* LAS 3 PROPUESTAS DE VALOR (LO QUE EL CLIENTE GANA) */
-        .value-props {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1px;
-            background: var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .prop-card {
-            background: var(--bg);
-            padding: 5rem 3rem;
-            transition: 0.3s;
-        }
-
-        .prop-card:hover { background: var(--surface); }
-
-        .prop-card h3 { color: var(--cyan); font-size: 1.2rem; margin-bottom: 1rem; }
-
-        .prop-card p { font-size: 1rem; color: var(--gray); }
-
-        /* SECCIÓN DE "PRUEBA" ABSTRACTA */
-        .visual-anchor {
-            height: 400px;
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            filter: saturate(0);
-            border-bottom: 1px solid var(--border);
-        }
-
-        /* CONTACTO: CIERRE DE TRATO */
-        .cta-section {
-            padding: 120px 8%;
+        .hero-footer {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 80px;
-            align-items: center;
+            gap: 100px;
         }
 
-        .cta-text h2 { font-size: 3.5rem; line-height: 1; margin-bottom: 20px; }
-
-        .form-box {
-            background: var(--surface);
-            padding: 60px;
-            border: 1px solid var(--border);
+        .hero-footer p {
+            font-size: 1.5rem;
+            line-height: 1.2;
+            max-width: 500px;
+            font-weight: 300;
         }
 
-        .input-group { margin-bottom: 30px; }
-        .input-group label {
-            display: block;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: var(--cyan);
-            margin-bottom: 10px;
+        /* SECCIÓN DE "VERDADES" (CONTENIDO QUE VENDE) */
+        .manifesto {
+            padding: 150px 6%;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2px;
+            background: var(--gray);
         }
 
-        input, textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--border);
-            color: white;
-            padding: 10px 0;
-            font-family: inherit;
-            font-size: 1.1rem;
-            outline: none;
+        .point {
+            background: var(--bg);
+            padding: 80px 40px;
         }
 
-        input:focus { border-color: var(--cyan); }
+        .point h2 { font-size: 3rem; margin-bottom: 2rem; color: var(--neon); }
+        .point p { font-size: 1.2rem; color: #888; max-width: 400px; }
 
-        .btn {
-            background: var(--cyan);
+        /* IMAGEN DE INFRAESTRUCTURA (WEB) */
+        .visual {
+            height: 600px;
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070') center/cover fixed;
+            filter: grayscale(1) contrast(1.5);
+            border-bottom: 1px solid var(--gray);
+        }
+
+        /* CONTACTO - FILTRO DE CLIENTES */
+        .contact {
+            padding: 150px 6%;
+            text-align: center;
+        }
+
+        .contact h2 { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; margin-bottom: 50px; }
+
+        .btn-black {
+            display: inline-block;
+            background: var(--white);
             color: var(--bg);
-            padding: 1.5rem 3rem;
-            border: none;
+            padding: 2rem 5rem;
+            font-size: 1.5rem;
+            font-weight: 900;
             text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 2px;
-            cursor: pointer;
-            width: 100%;
+            text-decoration: none;
             transition: 0.3s;
         }
 
-        .btn:hover { background: #fff; }
+        .btn-black:hover { background: var(--neon); transform: scale(1.05); }
 
         footer {
-            padding: 60px 8%;
-            border-top: 1px solid var(--border);
+            padding: 50px 6%;
+            border-top: 1px solid var(--gray);
             display: flex;
             justify-content: space-between;
-            font-size: 0.7rem;
-            color: var(--gray);
-            letter-spacing: 2px;
+            color: #444;
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
         }
 
-        @media (max-width: 1024px) {
-            .hero, .value-props, .cta-section { grid-template-columns: 1fr; }
+        @media (max-width: 768px) {
+            .hero-footer, .manifesto { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">KAIRON <span>ANALYTICS</span></div>
+        <div class="logo">KAIRON</div>
+        <div style="font-size: 0.7rem; letter-spacing: 2px;">MODELOS DE DECISIÓN CRÍTICA</div>
     </nav>
 
     <main>
         <section class="hero">
-            <div class="hero-content">
-                <span class="tag">Evidence-Based Results</span>
-                <h1>Transformamos <b>Datos</b> en <b>EBITDA.</b></h1>
-                <p>Ayudamos a grandes organizaciones a eliminar la incertidumbre operativa mediante ingeniería de datos y análisis de comportamiento avanzado.</p>
-                <a href="#contacto" style="text-decoration: none;"><button class="btn" style="width: auto;">Solicitar Diagnóstico Estratégico</button></a>
+            <h1>DATA <span>DOMINANCE</span></h1>
+            <div class="hero-footer">
+                <p>Usted no necesita gráficas. Usted necesita la certeza de que su siguiente movimiento va a destruir a su competencia.</p>
+                <p style="color: #444;">Estrategia basada en economía conductual y arquitecturas masivas de datos.</p>
             </div>
         </section>
 
-        <section class="value-props">
-            <div class="prop-card">
-                <h3>Previsibilidad Financiera</h3>
-                <p>Modelado avanzado para anticipar flujos de ingresos y optimizar la asignación de capital bajo escenarios de riesgo.</p>
+        <section class="manifesto">
+            <div class="point">
+                <h2>Causalidad.</h2>
+                <p>Deje de ver qué pasó. Le diremos por qué pasó y exactamente qué palanca mover para cambiar el resultado financiero mañana.</p>
             </div>
-            <div class="prop-card">
-                <h3>Ingeniería de Escala</h3>
-                <p>Construcción de infraestructuras que convierten el Big Data en una ventaja competitiva medible y segura.</p>
+            <div class="point">
+                <h2>Escala.</h2>
+                <p>Si sus datos no son una ventaja competitiva, son una pérdida de almacenamiento. Construimos sistemas que aprenden a ganar.</p>
             </div>
-            <div class="prop-card">
-                <h3>Inteligencia de Consumo</h3>
-                <p>Análisis de patrones reales para predecir la demanda y aumentar el valor de vida de cada cliente (CLV).</p>
+            <div class="point">
+                <h2>Conducta.</h2>
+                <p>Predecir el mercado es predecir personas. Aplicamos psicología conductual sobre Big Data para hackear la demanda de su sector.</p>
+            </div>
+            <div class="point">
+                <h2>Poder.</h2>
+                <p>No entregamos reportes de 50 páginas. Entregamos infraestructura de inteligencia que garantiza el control de su mercado.</p>
             </div>
         </section>
 
-        <div class="visual-anchor"></div>
+        <div class="visual"></div>
 
-        <section class="cta-section" id="contacto">
-            <div class="cta-text">
-                <h2>La intuición es costosa.<br>La evidencia es rentable.</h2>
-                <p style="color: var(--gray); margin-top: 2rem; font-size: 1.2rem;">Deje de adivinar el futuro de su mercado. Implemente rigor científico en su toma de decisiones hoy mismo.</p>
-            </div>
-            <div class="form-box">
-                <form>
-                    <div class="input-group">
-                        <label>Institución / Empresa</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Email Corporativo</label>
-                        <input type="email" required>
-                    </div>
-                    <div class="input-group">
-                        <label>Reto Estratégico</label>
-                        <textarea rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn">Enviar Solicitud de Auditoría</button>
-                </form>
-            </div>
+        <section class="contact">
+            <h2>¿Listo para el control?</h2>
+            <a href="mailto:tuemail@kairon.com" class="btn-black">Solicitar Auditoría Táctica</a>
+            <p style="margin-top: 40px; color: #444;">Solo aceptamos 2 proyectos de alto impacto por trimestre.</p>
         </section>
     </main>
 
     <footer>
-        <div>© 2025 Kairon Analytics Group</div>
-        <div>Innovación / Rigor / Resultados</div>
+        <div>KAIRON ANALYTICS 2025</div>
+        <div>NO DATA, NO GLORY</div>
     </footer>
 
 </body>
