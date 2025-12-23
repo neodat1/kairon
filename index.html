@@ -3,14 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIRON | Strategic Decision Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>KAIRON | Strategic Decision Architecture</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f9f8f6; /* Blanco hueso premium */
+            --bg: #f4f1ee; 
             --text: #1a1a1a;
             --accent: #000000;
-            --border: #e0ddd7;
+            --subtle: #8e8b88;
+            --border: rgba(0,0,0,0.1);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -19,157 +20,190 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.4;
             -webkit-font-smoothing: antialiased;
         }
 
-        /* NAVEGACIÓN SILENCIOSA */
+        /* NAVEGACIÓN DE ALTO NIVEL */
         nav {
-            padding: 3rem 8%;
+            padding: 2.5rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
         }
 
-        .logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.5rem; letter-spacing: -1px; }
-        .status { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 2px; color: #888; }
+        .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; letter-spacing: -1.5px; }
+        .nav-meta { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; color: var(--subtle); }
 
-        /* HERO: LA CLARIDAD ES PODER */
+        /* HERO: EL MANIFIESTO */
         .hero {
-            padding: 10rem 8%;
-            max-width: 1400px;
+            padding: 12rem 6% 8rem 6%;
+            max-width: 1600px;
         }
 
-        .hero span { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.5rem; color: #888; }
+        .hero span { 
+            font-family: 'Playfair Display', serif; 
+            font-style: italic; 
+            font-size: 1.4rem; 
+            color: var(--subtle);
+            display: block;
+            margin-bottom: 2rem;
+        }
 
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 5.5rem);
-            font-weight: 300;
-            line-height: 1.1;
-            letter-spacing: -2px;
-            margin-top: 2rem;
-            margin-bottom: 4rem;
+            font-size: clamp(3.5rem, 8vw, 8.5rem);
+            font-weight: 800;
+            line-height: 0.9;
+            letter-spacing: -5px;
+            margin-bottom: 6rem;
         }
 
-        .hero h1 b { font-weight: 700; color: var(--accent); }
+        .hero h1 b { color: var(--subtle); font-weight: 300; }
 
-        /* LA TRIPLE SÍNTESIS: EL VALOR REAL */
-        .values {
+        /* TESIS ESTRATÉGICA (TRIPLE MAESTRÍA) */
+        .thesis {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
+            border-top: 1px solid var(--accent);
         }
 
-        .v-box {
-            padding: 5rem 3rem;
+        .t-column {
+            padding: 6rem 4%;
             border-right: 1px solid var(--border);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 450px;
         }
 
-        .v-box:last-child { border-right: none; }
+        .t-column:last-child { border-right: none; }
 
-        .v-box h3 { font-family: 'Playfair Display', serif; font-size: 1.8rem; margin-bottom: 1.5rem; }
-        .v-box p { font-size: 1rem; color: #555; font-weight: 400; }
+        .t-column h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem; letter-spacing: -2px; }
+        .t-column p { font-size: 1.1rem; color: #444; font-weight: 400; max-width: 320px; line-height: 1.6; }
+        .t-index { font-size: 0.7rem; font-weight: 800; color: var(--subtle); margin-bottom: 1rem; }
 
-        /* SECCIÓN DE IMPACTO: EL ARGUMENTO */
-        .impact {
-            padding: 10rem 8%;
+        /* SECCIÓN DE IMPACTO EBITDA */
+        .ebitda {
+            padding: 10rem 6%;
+            background: #fff;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            background: #fff;
+            gap: 120px;
+            align-items: start;
         }
 
-        .impact h2 { font-size: 3rem; letter-spacing: -1px; line-height: 1.1; }
-        .impact p { font-size: 1.25rem; color: #666; }
-
-        /* CONVERSIÓN: ACCESO RESTRINGIDO */
-        .contact {
-            padding: 12rem 8%;
+        .ebitda h3 { font-size: 4rem; line-height: 1; letter-spacing: -3px; font-weight: 800; }
+        .ebitda-content p { font-size: 1.5rem; color: #555; margin-bottom: 2.5rem; font-weight: 300; }
+        
+        /* BOTÓN DE ACCIÓN TÁCTICA */
+        .cta-box {
+            padding: 15rem 6%;
             text-align: center;
+            border-top: 1px solid var(--border);
         }
 
-        .contact h2 { font-family: 'Playfair Display', serif; font-size: 4rem; margin-bottom: 3rem; }
+        .cta-box h4 { font-family: 'Playfair Display', serif; font-size: 5rem; letter-spacing: -3px; margin-bottom: 4rem; }
 
-        .btn-premium {
+        .btn-intervention {
             display: inline-block;
             background: var(--accent);
             color: #fff;
-            padding: 1.5rem 4rem;
+            padding: 2rem 5rem;
             text-decoration: none;
-            font-weight: 700;
-            font-size: 1rem;
-            letter-spacing: 1px;
-            transition: 0.3s;
+            font-weight: 800;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .btn-premium:hover { transform: translateY(-5px); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+        .btn-intervention:hover { 
+            transform: scale(1.05); 
+            background: #333;
+            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
+        }
 
+        /* FOOTER DE AUTORIDAD */
         footer {
-            padding: 4rem 8%;
-            border-top: 1px solid var(--border);
+            padding: 5rem 6%;
+            background: #000;
+            color: #fff;
             display: flex;
             justify-content: space-between;
-            font-size: 0.75rem;
-            color: #999;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            align-items: flex-end;
         }
 
-        @media (max-width: 900px) {
-            .values, .impact { grid-template-columns: 1fr; }
-            .v-box { border-right: none; border-bottom: 1px solid var(--border); }
+        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .credentials { text-align: right; font-size: 0.8rem; line-height: 2; opacity: 0.6; letter-spacing: 1px; }
+
+        @media (max-width: 1024px) {
+            .thesis, .ebitda { grid-template-columns: 1fr; }
+            .t-column { border-right: none; border-bottom: 1px solid var(--border); min-height: auto; }
+            .ebitda { gap: 40px; }
+            .hero h1 { font-size: 4rem; letter-spacing: -2px; }
+            .cta-box h4 { font-size: 3rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Kairon.</div>
-        <div class="status">Intelligence Unit / 2025</div>
+        <div class="logo">Kairon Group.</div>
+        <div class="nav-meta">Strategic Asset Intelligence // Q1-2025</div>
     </nav>
 
     <main>
         <section class="hero">
-            <span>The Synthesis of Certainty</span>
-            <h1>Diseñamos las arquitecturas de <b>datos</b> que ejecutan las decisiones más <b>críticas</b> del mercado.</h1>
+            <span>The Intelligence Architecture</span>
+            <h1>Data into <b>Capital.</b><br>Decisions into <b>Power.</b></h1>
         </section>
 
-        <section class="values">
-            <div class="v-box">
-                <h3>Economics.</h3>
-                <p>Modelado causal de alta fidelidad para identificar ineficiencias de capital y optimizar el EBITDA mediante rigor científico.</p>
+        <section class="thesis">
+            <div class="t-column">
+                <div>
+                    <div class="t-index">I / ECONOMETRÍA</div>
+                    <h2>Rigor.</h2>
+                </div>
+                <p>Aislamos la causalidad real. Modelamos ineficiencias de capital para proteger y expandir sus márgenes operativos.</p>
             </div>
-            <div class="v-box">
-                <h3>Data Science.</h3>
-                <p>Ingeniería de infraestructuras masivas que transforman variables complejas en radares de oportunidad en tiempo real.</p>
+            <div class="t-column">
+                <div>
+                    <div class="t-index">II / INGENIERÍA</div>
+                    <h2>Escala.</h2>
+                </div>
+                <p>Infraestructuras de Big Data diseñadas para la alta dirección. Información crítica en tiempo real, sin ruido.</p>
             </div>
-            <div class="v-box">
-                <h3>Behavior.</h3>
-                <p>Decodificación de la psicología de mercado para predecir la demanda y aumentar el valor neto por cliente con precisión matemática.</p>
+            <div class="t-column">
+                <div>
+                    <div class="t-index">III / CONDUCTA</div>
+                    <h2>Predicción.</h2>
+                </div>
+                <p>Decodificamos la psicología del mercado. Anticípese a la demanda con modelos de comportamiento de alta fidelidad.</p>
             </div>
         </section>
 
-        <section class="impact">
-            <div>
-                <h2>Su empresa no necesita más información.<br>Necesita dirección.</h2>
-            </div>
-            <div>
-                <p>La mayoría de las organizaciones se ahogan en reportes descriptivos que no mueven la aguja. Nuestra intervención se centra en la ejecución: si los datos no generan un retorno medible, no son inteligencia.</p>
+        <section class="ebitda">
+            <h3>Usted no necesita ver qué pasó.<br>Necesita dictar qué pasará.</h3>
+            <div class="ebitda-content">
+                <p>La mayoría de las empresas recolectan datos como un gasto pasivo. Nosotros transformamos esa infraestructura en un radar de rentabilidad. Si su sistema de datos no impacta directamente en su EBITDA, usted no tiene inteligencia; tiene archivos.</p>
             </div>
         </section>
 
-        <section class="contact">
-            <h2>Hablemos de impacto.</h2>
-            <a href="mailto:admin@kairon.com" class="btn-premium">Solicitar Auditoría Senior</a>
-            <p style="margin-top: 3rem; color: #999; font-size: 0.8rem; letter-spacing: 2px;">DISPONIBILIDAD LIMITADA PARA EL Q1</p>
+        <section class="cta-box">
+            <h4>¿Certeza o azar?</h4>
+            <a href="mailto:admin@kairon.com" class="btn-intervention">Agendar Intervención Senior</a>
+            <p style="margin-top: 4rem; color: var(--subtle); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;">Aceptando 2 nuevos proyectos para el trimestre actual</p>
         </section>
     </main>
 
     <footer>
-        <div>Kairon Analytics Group</div>
-        <div>MSc. Economy / MSc. Data Science / MSc. BI</div>
+        <div class="footer-logo">K.</div>
+        <div class="credentials">
+            MSc. APPLIED ECONOMICS<br>
+            MSc. DATA SCIENCE & BIG DATA<br>
+            MSc. BUSINESS INTELLIGENCE & BEHAVIOR
+        </div>
     </footer>
 
 </body>
