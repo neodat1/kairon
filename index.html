@@ -3,15 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIRON | Strategic Decision Architecture</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,900;1,900&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <title>KAIRON | Strategic Decision Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #f4f1ee; 
-            --text: #1a1a1a;
-            --accent: #000000;
-            --subtle: #8e8b88;
-            --border: rgba(0,0,0,0.1);
+            --bg: #050505;
+            --text: #ffffff;
+            --accent: #e5e5e5;
+            --dim: #555555;
+            --border: #1a1a1a;
+            --gold: #c5a059; /* Un toque de oro sutil para indicar estatus */
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -20,189 +21,185 @@
             font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--text);
-            line-height: 1.4;
+            line-height: 1.1;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
-        /* NAVEGACIÓN DE ALTO NIVEL */
+        .mono { font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; }
+
+        /* NAVEGACIÓN QUIRÚRGICA */
         nav {
-            padding: 2.5rem 6%;
+            padding: 2.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
+            position: fixed;
+            width: 100%;
+            background: rgba(5,5,5,0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
         }
 
-        .logo { font-family: 'Playfair Display', serif; font-weight: 900; font-size: 1.8rem; letter-spacing: -1.5px; }
-        .nav-meta { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 3px; font-weight: 600; color: var(--subtle); }
+        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
 
-        /* HERO: EL MANIFIESTO */
+        /* HERO: EL IMPACTO DE LA CERTEZA */
         .hero {
-            padding: 12rem 6% 8rem 6%;
-            max-width: 1600px;
-        }
-
-        .hero span { 
-            font-family: 'Playfair Display', serif; 
-            font-style: italic; 
-            font-size: 1.4rem; 
-            color: var(--subtle);
-            display: block;
-            margin-bottom: 2rem;
+            padding: 15rem 5% 8rem 5%;
+            border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
-            font-size: clamp(3.5rem, 8vw, 8.5rem);
-            font-weight: 800;
-            line-height: 0.9;
-            letter-spacing: -5px;
-            margin-bottom: 6rem;
+            font-size: clamp(3rem, 10vw, 9rem);
+            font-weight: 900;
+            letter-spacing: -0.06em;
+            margin-bottom: 5rem;
+            line-height: 0.85;
         }
 
-        .hero h1 b { color: var(--subtle); font-weight: 300; }
+        .hero h1 span { color: var(--dim); }
 
-        /* TESIS ESTRATÉGICA (TRIPLE MAESTRÍA) */
-        .thesis {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid var(--accent);
-        }
-
-        .t-column {
-            padding: 6rem 4%;
-            border-right: 1px solid var(--border);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            min-height: 450px;
-        }
-
-        .t-column:last-child { border-right: none; }
-
-        .t-column h2 { font-family: 'Playfair Display', serif; font-size: 3rem; margin-bottom: 2rem; letter-spacing: -2px; }
-        .t-column p { font-size: 1.1rem; color: #444; font-weight: 400; max-width: 320px; line-height: 1.6; }
-        .t-index { font-size: 0.7rem; font-weight: 800; color: var(--subtle); margin-bottom: 1rem; }
-
-        /* SECCIÓN DE IMPACTO EBITDA */
-        .ebitda {
-            padding: 10rem 6%;
-            background: #fff;
+        .hero-footer {
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 120px;
-            align-items: start;
-        }
-
-        .ebitda h3 { font-size: 4rem; line-height: 1; letter-spacing: -3px; font-weight: 800; }
-        .ebitda-content p { font-size: 1.5rem; color: #555; margin-bottom: 2.5rem; font-weight: 300; }
-        
-        /* BOTÓN DE ACCIÓN TÁCTICA */
-        .cta-box {
-            padding: 15rem 6%;
-            text-align: center;
-            border-top: 1px solid var(--border);
-        }
-
-        .cta-box h4 { font-family: 'Playfair Display', serif; font-size: 5rem; letter-spacing: -3px; margin-bottom: 4rem; }
-
-        .btn-intervention {
-            display: inline-block;
-            background: var(--accent);
-            color: #fff;
-            padding: 2rem 5rem;
-            text-decoration: none;
-            font-weight: 800;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
-        }
-
-        .btn-intervention:hover { 
-            transform: scale(1.05); 
-            background: #333;
-            box-shadow: 0 30px 60px rgba(0,0,0,0.12);
-        }
-
-        /* FOOTER DE AUTORIDAD */
-        footer {
-            padding: 5rem 6%;
-            background: #000;
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
+            gap: 100px;
             align-items: flex-end;
         }
 
-        .footer-logo { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
-        .credentials { text-align: right; font-size: 0.8rem; line-height: 2; opacity: 0.6; letter-spacing: 1px; }
+        .hero-footer p {
+            font-size: 2rem;
+            font-weight: 300;
+            line-height: 1.2;
+            color: var(--accent);
+            max-width: 700px;
+        }
+
+        /* LAS TRES TESIS (MAESTRÍAS CONVERTIDAS EN VALOR) */
+        .framework {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .f-box {
+            padding: 8rem 4rem;
+            border-right: 1px solid var(--border);
+            transition: all 0.5s ease;
+        }
+
+        .f-box:hover { background: #0a0a0a; }
+        .f-box:last-child { border-right: none; }
+
+        .f-box h2 { font-size: 2.5rem; margin-bottom: 2rem; font-weight: 700; letter-spacing: -2px; }
+        .f-box p { font-size: 1.1rem; color: var(--dim); line-height: 1.6; }
+
+        /* SECCIÓN DE "INSIGHT" */
+        .statement {
+            padding: 12rem 5%;
+            background: #fff;
+            color: #000;
+        }
+
+        .statement h2 { font-size: 4.5rem; font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 4rem; }
+        .statement p { font-size: 1.8rem; font-weight: 400; max-width: 900px; color: #333; }
+
+        /* CALL TO ACTION: EXCLUSIVIDAD */
+        .cta-section {
+            padding: 12rem 5%;
+            text-align: left;
+        }
+
+        .cta-section h2 { font-size: 6rem; font-weight: 900; letter-spacing: -5px; margin-bottom: 4rem; }
+
+        .btn-main {
+            display: inline-block;
+            background: var(--text);
+            color: var(--bg);
+            padding: 2.5rem 6rem;
+            font-size: 1.5rem;
+            font-weight: 900;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+        }
+
+        .btn-main:hover { background: var(--gold); transform: translateY(-10px); }
+
+        /* FOOTER: AUTORIDAD TÉCNICA */
+        footer {
+            padding: 5rem 5%;
+            border-top: 1px solid var(--border);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .creds { text-align: right; }
+        .creds p { font-size: 0.8rem; color: var(--dim); margin-bottom: 0.5rem; font-weight: 600; }
 
         @media (max-width: 1024px) {
-            .thesis, .ebitda { grid-template-columns: 1fr; }
-            .t-column { border-right: none; border-bottom: 1px solid var(--border); min-height: auto; }
-            .ebitda { gap: 40px; }
-            .hero h1 { font-size: 4rem; letter-spacing: -2px; }
-            .cta-box h4 { font-size: 3rem; }
+            .hero-footer, .framework, footer { grid-template-columns: 1fr; gap: 40px; }
+            .f-box { border-right: none; border-bottom: 1px solid var(--border); }
+            .hero h1 { font-size: 4.5rem; }
+            .statement h2 { font-size: 3rem; }
+            .cta-section h2 { font-size: 3.5rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">Kairon Group.</div>
-        <div class="nav-meta">Strategic Asset Intelligence // Q1-2025</div>
+        <div class="logo">KAIRON.</div>
+        <div class="mono" style="color: var(--gold);">High-Stakes Execution</div>
     </nav>
 
     <main>
         <section class="hero">
-            <span>The Intelligence Architecture</span>
-            <h1>Data into <b>Capital.</b><br>Decisions into <b>Power.</b></h1>
-        </section>
-
-        <section class="thesis">
-            <div class="t-column">
-                <div>
-                    <div class="t-index">I / ECONOMETRÍA</div>
-                    <h2>Rigor.</h2>
-                </div>
-                <p>Aislamos la causalidad real. Modelamos ineficiencias de capital para proteger y expandir sus márgenes operativos.</p>
-            </div>
-            <div class="t-column">
-                <div>
-                    <div class="t-index">II / INGENIERÍA</div>
-                    <h2>Escala.</h2>
-                </div>
-                <p>Infraestructuras de Big Data diseñadas para la alta dirección. Información crítica en tiempo real, sin ruido.</p>
-            </div>
-            <div class="t-column">
-                <div>
-                    <div class="t-index">III / CONDUCTA</div>
-                    <h2>Predicción.</h2>
-                </div>
-                <p>Decodificamos la psicología del mercado. Anticípese a la demanda con modelos de comportamiento de alta fidelidad.</p>
+            <div class="mono" style="margin-bottom: 3rem; color: var(--dim);">[ Strategic Asset Intelligence ]</div>
+            <h1>DECISIONS <span>BASED ON</span> CERTAINTY.</h1>
+            <div class="hero-footer">
+                <p>No somos consultores. Somos ingenieros de resultados. Transformamos la complejidad económica en una ventaja competitiva de ejecución inmediata.</p>
+                <div class="mono" style="color: var(--dim); text-align: right;">Op. Model: Applied Intel // Q1-2025</div>
             </div>
         </section>
 
-        <section class="ebitda">
-            <h3>Usted no necesita ver qué pasó.<br>Necesita dictar qué pasará.</h3>
-            <div class="ebitda-content">
-                <p>La mayoría de las empresas recolectan datos como un gasto pasivo. Nosotros transformamos esa infraestructura en un radar de rentabilidad. Si su sistema de datos no impacta directamente en su EBITDA, usted no tiene inteligencia; tiene archivos.</p>
+        <section class="framework">
+            <div class="f-box">
+                <div class="mono" style="margin-bottom: 2rem; color: var(--gold);">01. Economics</div>
+                <h2>Causalidad.</h2>
+                <p>Aislamos el ruido del mercado. Modelamos ineficiencias financieras con rigor econométrico para blindar y expandir su rentabilidad neta.</p>
+            </div>
+            <div class="f-box">
+                <div class="mono" style="margin-bottom: 2rem; color: var(--gold);">02. Data Science</div>
+                <h2>Escala.</h2>
+                <p>Ingeniería de datos de grado industrial. Infraestructuras masivas diseñadas para convertir variables complejas en radares de ejecución en tiempo real.</p>
+            </div>
+            <div class="f-box">
+                <div class="mono" style="margin-bottom: 2rem; color: var(--gold);">03. Behavior</div>
+                <h2>Predicción.</h2>
+                <p>Decodificamos el comportamiento. Anticipamos movimientos de mercado mediante ciencia conductual aplicada sobre flujos masivos de datos.</p>
             </div>
         </section>
 
-        <section class="cta-box">
-            <h4>¿Certeza o azar?</h4>
-            <a href="mailto:admin@kairon.com" class="btn-intervention">Agendar Intervención Senior</a>
-            <p style="margin-top: 4rem; color: var(--subtle); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase;">Aceptando 2 nuevos proyectos para el trimestre actual</p>
+        <section class="statement">
+            <h2>Usted no necesita más datos.<br>Necesita el control.</h2>
+            <p>La mayoría de las empresas recolectan información como un gasto pasivo. Nuestra intervención convierte esa infraestructura en un sistema de dominio de mercado.</p>
+        </section>
+
+        <section class="cta-section">
+            <h2>¿Listo para la intervención?</h2>
+            <a href="mailto:admin@kairon.com" class="btn-main">Agendar Diagnóstico</a>
+            <p class="mono" style="margin-top: 4rem; color: var(--dim);">Aceptando 2 nuevos proyectos de alto impacto por trimestre.</p>
         </section>
     </main>
 
     <footer>
-        <div class="footer-logo">K.</div>
-        <div class="credentials">
-            MSc. APPLIED ECONOMICS<br>
-            MSc. DATA SCIENCE & BIG DATA<br>
-            MSc. BUSINESS INTELLIGENCE & BEHAVIOR
+        <div class="logo">KAIRON GROUP</div>
+        <div class="creds">
+            <p>MSc. APPLIED ECONOMICS</p>
+            <p>MSc. DATA SCIENCE & BIG DATA</p>
+            <p>MSc. BUSINESS INTELLIGENCE & BEHAVIOR</p>
         </div>
     </footer>
 
