@@ -3,191 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIRON | Strategic Intelligence</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500;800&family=IBM+Plex+Mono:wght@400&display=swap" rel="stylesheet">
+    <title>KAIRON | Strategic Dominance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@400;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #080808;
-            --accent: #00e5ff;
+            --bg: #000000;
+            --accent: #ffffff;
+            --dim: #444;
             --border: #1a1a1a;
-            --text-main: #ffffff;
-            --text-muted: #666666;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             background-color: var(--bg);
-            color: var(--text-main);
-            line-height: 1.1;
+            color: var(--accent);
+            line-height: 1;
             overflow-x: hidden;
         }
 
-        /* NAVEGACIÓN QUIRÚRGICA */
+        /* HEADER - ESTATUS PURO */
         nav {
             padding: 2.5rem 5%;
             display: flex;
             justify-content: space-between;
             align-items: center;
             border-bottom: 1px solid var(--border);
-            position: sticky;
-            top: 0;
-            background: var(--bg);
-            z-index: 100;
+            position: fixed;
+            width: 100%;
+            background: rgba(0,0,0,0.9);
+            z-index: 1000;
         }
 
-        .logo { font-weight: 800; font-size: 1.2rem; letter-spacing: -1px; }
-        .mono { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--accent); text-transform: uppercase; letter-spacing: 2px; }
+        .logo { font-weight: 700; letter-spacing: 8px; font-size: 1.1rem; }
+        .system-status { font-size: 0.6rem; letter-spacing: 2px; color: #666; text-transform: uppercase; }
 
-        /* HERO: LA VENTAJA DE LA INFORMACIÓN */
+        /* HERO - EL GOLPE EN LA MESA */
         .hero {
-            padding: 12rem 5% 8rem 5%;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            padding: 0 5% 5rem 5%;
             border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
-            font-size: clamp(3.5rem, 12vw, 11rem);
-            font-weight: 800;
-            letter-spacing: -0.06em;
+            font-family: 'Inter', sans-serif;
+            font-size: clamp(4rem, 15vw, 14rem);
+            font-weight: 900;
+            letter-spacing: -0.07em;
+            line-height: 0.75;
             margin-bottom: 4rem;
         }
 
-        .hero h1 span { color: var(--accent); }
-
-        .hero-grid {
-            display: grid;
-            grid-template-columns: 1.5fr 1fr;
-            gap: 4rem;
-            align-items: end;
-        }
-
-        .hero-grid p { font-size: 1.8rem; font-weight: 300; line-height: 1.2; color: #ccc; }
-
-        /* SECCIÓN DE "SÍNTESIS" (LO QUE TÚ HACES QUE NADIE MÁS HACE) */
-        .synthesis {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            background: var(--border);
-            gap: 1px;
-        }
-
-        .syn-box {
-            background: var(--bg);
-            padding: 6rem 3rem;
-            transition: 0.4s ease;
-        }
-
-        .syn-box:hover { background: #0c0c0c; }
-
-        .syn-box h2 { font-size: 2rem; margin-bottom: 2rem; letter-spacing: -1px; }
-        .syn-box p { font-size: 1rem; color: var(--text-muted); line-height: 1.6; }
-
-        /* VISUAL: ESTRATEGIA PURA */
-        .visual {
-            height: 60vh;
-            background: linear-gradient(to bottom, rgba(8,8,8,1), rgba(8,8,8,0)), 
-                        url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop');
-            background-size: cover;
-            background-position: center;
-            filter: grayscale(1) brightness(0.6);
-        }
-
-        /* CONVERSIÓN: FILTRO DIRECTIVO */
-        .conversion {
-            padding: 10rem 5%;
+        .hero-meta {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 100px;
+            align-items: end;
         }
 
-        .conversion h2 { font-size: 4.5rem; letter-spacing: -3px; line-height: 0.9; }
+        .hero-meta p { font-size: 1.8rem; font-weight: 300; line-height: 1.1; color: #888; max-width: 600px; }
 
-        .btn-xl {
-            display: inline-block;
-            background: var(--white);
-            color: var(--bg);
-            background: white;
-            padding: 2.5rem;
-            font-size: 1.5rem;
-            font-weight: 800;
+        /* THE SYNTHESIS (LAS 3 MAESTRÍAS CONVERTIDAS EN ARMAS) */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .cell {
+            padding: 8rem 3rem;
+            border-right: 1px solid var(--border);
+            transition: 0.5s;
+        }
+
+        .cell:hover { background: #080808; }
+
+        .cell-num { font-size: 0.7rem; color: #444; margin-bottom: 3rem; display: block; }
+        .cell h2 { font-size: 2.5rem; margin-bottom: 2rem; letter-spacing: -2px; }
+        .cell p { font-size: 1.1rem; color: #666; line-height: 1.4; font-weight: 300; }
+
+        /* VISUAL - SIN RELLENO */
+        .visual {
+            height: 50vh;
+            background: url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=2070&auto=format&fit=crop') center/cover fixed;
+            filter: grayscale(1) contrast(1.2) brightness(0.4);
+        }
+
+        /* CONVERSIÓN - EL CIERRE */
+        .closing {
+            padding: 12rem 5%;
             text-align: center;
-            text-decoration: none;
-            text-transform: uppercase;
-            margin-top: 2rem;
-            transition: 0.3s;
         }
 
-        .btn-xl:hover { background: var(--accent); transform: translateY(-5px); }
+        .closing h2 { font-size: clamp(3rem, 10vw, 8rem); font-weight: 700; letter-spacing: -5px; margin-bottom: 5rem; }
+
+        .btn-call {
+            display: inline-block;
+            border: 1px solid var(--accent);
+            padding: 2.5rem 6rem;
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            color: var(--accent);
+            transition: 0.3s;
+            text-transform: uppercase;
+        }
+
+        .btn-call:hover { background: var(--accent); color: var(--bg); }
 
         footer {
-            padding: 4rem 5%;
-            border-top: 1px solid var(--border);
+            padding: 3rem 5%;
             display: flex;
             justify-content: space-between;
-            color: var(--text-muted);
+            color: #333;
             font-size: 0.7rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            border-top: 1px solid var(--border);
         }
 
         @media (max-width: 900px) {
-            .hero-grid, .synthesis, .conversion { grid-template-columns: 1fr; }
-            .hero h1 { font-size: 4rem; }
+            .hero-meta, .grid { grid-template-columns: 1fr; }
+            .cell { border-right: none; border-bottom: 1px solid var(--border); }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">KAIRON.</div>
-        <div class="mono">Strategic Asset Intelligence</div>
+        <div class="logo">KAIRON</div>
+        <div class="system-status">ALGORITHM_ACTIVE // 2025</div>
     </nav>
 
     <main>
         <section class="hero">
-            <div class="mono" style="margin-bottom: 2rem;">Decision Architecture // 2025</div>
-            <h1>UNFAIR <span>ADVANTAGE.</span></h1>
-            <div class="hero-grid">
-                <p>Convertimos la complejidad económica en una ventaja competitiva de ejecución inmediata. <b>Si no es medible, no existe.</b></p>
-                <div class="mono" style="color: var(--text-muted); text-align: right;">
-                    Applied Economics<br>Data Engineering<br>Behavioral Science
-                </div>
+            <h1>NO<br>GUESSING.</h1>
+            <div class="hero-meta">
+                <p>Convertimos la complejidad económica en <b>ejecución implacable.</b> Si sus datos no dictan su siguiente victoria, son ruido.</p>
+                <div style="font-size: 0.8rem; text-align: right; letter-spacing: 2px;">STRATEGIC INTEL UNIT</div>
             </div>
         </section>
 
-        <section class="synthesis">
-            <div class="syn-box">
-                <div class="mono" style="margin-bottom: 2rem;">01 / Rigor</div>
-                <h2>Economía de Resultados.</h2>
-                <p>No hacemos reportes descriptivos. Aplicamos modelado econométrico para encontrar ineficiencias en el flujo de capital y optimizar el EBITDA mediante datos.</p>
+        <section class="grid">
+            <div class="cell">
+                <span class="cell-num">01 / ECONOMÍA APLICADA</span>
+                <h2>Arbitraje de Capital.</h2>
+                <p>No analizamos el mercado, lo modelamos. Utilizamos econometría de alto nivel para encontrar ineficiencias financieras y maximizar el EBITDA donde su competencia solo ve costos.</p>
             </div>
-            <div class="syn-box">
-                <div class="mono" style="margin-bottom: 2rem;">02 / Poder</div>
+            <div class="cell">
+                <span class="cell-num">02 / DATA SCIENCE</span>
                 <h2>Ingeniería de Escala.</h2>
-                <p>Diseñamos la infraestructura técnica que soporta decisiones de alto riesgo. Arquitecturas de Big Data preparadas para el dominio del mercado en tiempo real.</p>
+                <p>Construimos la infraestructura técnica que soporta decisiones de riesgo millonario. Sistemas de Big Data que transforman millones de variables en una sola dirección de ataque.</p>
             </div>
-            <div class="syn-box">
-                <div class="mono" style="margin-bottom: 2rem;">03 / Control</div>
-                <h2>Psicología de Datos.</h2>
-                <p>El mercado son personas. Utilizamos ciencia conductual para predecir la demanda y forzar la rentabilidad donde otros solo ven ruido estadístico.</p>
+            <div class="cell">
+                <span class="cell-num">03 / CONDUCTA</span>
+                <h2>Predicción Real.</h2>
+                <p>El mercado es psicología masiva. Aplicamos ciencia del comportamiento sobre flujos de datos reales para predecir y forzar la demanda antes de que ocurra.</p>
             </div>
         </section>
 
         <div class="visual"></div>
 
-        <section class="conversion">
-            <div>
-                <h2>¿Quiere entender el mercado o dominarlo?</h2>
-                <p style="margin-top: 3rem; font-size: 1.2rem; color: var(--text-muted); line-height: 1.6;">Solo aceptamos compromisos donde nuestra intervención garantice un retorno sobre la inversión multiplicado. El diagnóstico inicial es el filtro.</p>
-            </div>
-            <div>
-                <a href="mailto:tuemail@dominio.com" class="btn-xl">Solicitar Intervención</a>
-            </div>
+        <section class="closing">
+            <h2>Resultados, no reportes.</h2>
+            <a href="mailto:tuemail@kairon.com" class="btn-call">Ordenar Intervención</a>
+            <p style="margin-top: 4rem; color: #444; font-size: 0.9rem; letter-spacing: 2px;">LIMITADO A 2 PROYECTOS POR TRIMESTRE</p>
         </section>
     </main>
 
     <footer>
-        <div>© KAIRON ANALYTICS GROUP / LONDON - MADRID</div>
-        <div class="mono">High-Stakes Data Execution</div>
+        <div>KAIRON ANALYTICS GROUP</div>
+        <div>MSc. ECON / MSc. DATA / MSc. BI</div>
     </footer>
 
 </body>
