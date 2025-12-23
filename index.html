@@ -3,244 +3,276 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairon Analytics | Consultoría Estratégica en Datos e IA</title>
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;500;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <title>Kairon Analytics | Strategic Economic Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&family=Inter:wght@200;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --cyan-accent: #00d2ff;
-            --bg-black: #050507;
-            --ui-border: #1a1a1f;
-            --text-primary: #f1f1f1;
-            --text-dim: #88888e;
+            --cyan: #00d2ff;
+            --bg: #030406;
+            --surface: #0a0c10;
+            --border: #161a22;
+            --text-dim: #94a3b8;
+            --white: #ffffff;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: var(--bg-black);
-            color: var(--text-primary);
-            line-height: 1.4;
+            background-color: var(--bg);
+            color: var(--white);
+            line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
 
-        h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; letter-spacing: -1px; }
-
-        header {
+        /* NAVEGACIÓN TÉCNICA */
+        nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 2.5rem 6%;
-            position: absolute;
+            padding: 2rem 6%;
+            border-bottom: 1px solid var(--border);
+            background: rgba(3, 4, 6, 0.8);
+            backdrop-filter: blur(20px);
+            position: fixed;
             width: 100%;
-            z-index: 100;
+            z-index: 1000;
         }
 
         .logo {
-            font-size: 0.9rem;
-            letter-spacing: 8px;
-            font-weight: 800;
-            border-left: 3px solid var(--cyan-accent);
-            padding-left: 15px;
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 0.85rem;
+            letter-spacing: 0.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
         }
 
-        .logo span { color: var(--cyan-accent); font-weight: 200; }
+        .logo span { color: var(--cyan); font-weight: 200; }
 
-        /* HERO - FOCO EN EL DOBLE PERFIL */
+        /* HERO: LA INTERSECCIÓN DE ECONOMÍA Y DATOS */
         .hero {
             height: 100vh;
-            display: flex;
+            display: grid;
+            grid-template-columns: 1.2fr 0.8fr;
             align-items: center;
             padding: 0 6%;
             position: relative;
-            overflow: hidden;
-            border-bottom: 1px solid var(--ui-border);
         }
 
-        .hero-bg {
-            position: absolute;
-            right: 0;
-            top: 0;
-            width: 60%;
-            height: 100%;
-            background: linear-gradient(to left, var(--bg-black) 10%, transparent),
-                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070');
-            background-size: cover;
-            background-position: center;
-            opacity: 0.25;
-            filter: grayscale(1);
-        }
+        .hero-content { z-index: 2; }
 
-        .hero-content { position: relative; z-index: 2; max-width: 1000px; }
-
-        .hero-label {
-            color: var(--cyan-accent);
-            font-size: 0.7rem;
-            letter-spacing: 5px;
-            font-weight: 600;
-            margin-bottom: 2rem;
+        .tag {
+            color: var(--cyan);
+            font-size: 0.65rem;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
             display: block;
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: clamp(3rem, 7vw, 6rem);
             line-height: 0.9;
-            margin-bottom: 2.5rem;
+            margin-bottom: 2rem;
+            letter-spacing: -3px;
         }
 
-        .hero h1 b { color: var(--cyan-accent); font-weight: 200; }
+        .hero h1 b { color: var(--cyan); font-weight: 500; }
 
         .hero p {
-            font-size: 1.3rem;
+            font-size: 1.25rem;
             color: var(--text-dim);
-            max-width: 650px;
-            font-weight: 300;
-            line-height: 1.6;
+            max-width: 500px;
+            font-weight: 200;
         }
 
-        /* SECCIÓN DE EXPERTISE ACADÉMICO */
-        .academic-rigor {
+        .hero-visual {
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1551288049-bbda38a5f97b?auto=format&fit=crop&q=80&w=2070') center/cover;
+            mask-image: linear-gradient(to right, transparent, black);
+            opacity: 0.4;
+            filter: saturate(0) brightness(0.8);
+        }
+
+        /* SECCIÓN DE EXPERTISE: TRIPLE MAESTRÍA */
+        .maestrias {
             padding: 100px 6%;
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 50px;
-            background: #08080a;
-            border-bottom: 1px solid var(--ui-border);
-        }
-
-        .academic-box {
-            border: 1px solid var(--ui-border);
-            padding: 40px;
-            background: rgba(255,255,255,0.02);
-        }
-
-        .academic-box h3 {
-            font-size: 0.8rem;
-            color: var(--cyan-accent);
-            margin-bottom: 15px;
-        }
-
-        /* GRID DE SERVICIOS */
-        .capabilities { padding: 120px 6%; }
-
-        .cap-grid {
-            display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2px;
-            background: var(--ui-border);
-            border: 1px solid var(--ui-border);
+            gap: 1px;
+            background: var(--border);
         }
 
-        .cap-item {
+        .m-card {
+            background: var(--bg);
             padding: 60px 40px;
-            background: var(--bg-black);
-            transition: all 0.4s ease;
+            transition: 0.4s;
         }
 
-        .cap-item:hover { background: #0c0c12; }
+        .m-card:hover { background: var(--surface); }
 
-        .cap-item h3 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
+        .m-card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+            color: var(--cyan);
+        }
 
-        .cap-item p { color: var(--text-dim); font-size: 0.9rem; }
+        .m-card p {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            font-weight: 300;
+        }
 
-        /* CONTACTO */
+        /* VISUALIZACIÓN DE DATOS ABSTRACTA */
+        .data-break {
+            height: 400px;
+            background: url('https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&q=80&w=2426') fixed center/cover;
+            filter: grayscale(1) contrast(1.2) brightness(0.5);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        /* SECCIÓN DE CONVERSIÓN */
         .contact {
-            padding: 140px 6%;
+            padding: 150px 6%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 100px;
         }
 
-        .btn-prime {
-            background: var(--cyan-accent);
-            color: var(--bg-black);
-            padding: 20px 60px;
-            border: none;
+        .contact-text h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3.5rem;
+            line-height: 1;
+            margin-bottom: 2rem;
+        }
+
+        .form-ui {
+            background: var(--surface);
+            padding: 60px;
+            border: 1px solid var(--border);
+        }
+
+        .field { margin-bottom: 30px; }
+        .field label {
+            display: block;
+            font-size: 0.6rem;
+            letter-spacing: 2px;
             text-transform: uppercase;
-            font-weight: 800;
-            letter-spacing: 4px;
+            color: var(--cyan);
+            margin-bottom: 10px;
+        }
+
+        input, textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid var(--border);
+            color: var(--white);
+            padding: 10px 0;
+            font-family: inherit;
+            font-size: 1.1rem;
+            outline: none;
+        }
+
+        input:focus { border-color: var(--cyan); }
+
+        .btn {
+            background: var(--cyan);
+            color: var(--bg);
+            padding: 1.5rem 4rem;
+            border: none;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
             font-size: 0.8rem;
-            cursor: pointer;
+            width: 100%;
             transition: 0.3s;
         }
 
+        .btn:hover { background: var(--white); }
+
         footer {
             padding: 60px 6%;
-            border-top: 1px solid var(--ui-border);
+            border-top: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
-            font-size: 0.6rem;
-            letter-spacing: 4px;
+            font-size: 0.65rem;
+            letter-spacing: 3px;
             color: var(--text-dim);
             text-transform: uppercase;
         }
 
-        @media (max-width: 900px) {
-            .academic-rigor, .cap-grid, .contact { grid-template-columns: 1fr; }
+        @media (max-width: 1024px) {
+            .hero, .maestrias, .contact { grid-template-columns: 1fr; }
+            .hero-visual { display: none; }
         }
     </style>
 </head>
 <body>
 
-    <header>
+    <nav>
         <div class="logo">KAIRON <span>ANALYTICS</span></div>
-    </header>
+    </nav>
 
     <main>
         <section class="hero">
-            <div class="hero-bg"></div>
             <div class="hero-content">
-                <span class="hero-label">Ciencia de Datos & Consumer Intelligence</span>
-                <h1>Ciencia aplicada al <b>Comportamiento Humano.</b></h1>
-                <p>Usted no solo necesita Big Data; necesita entender por qué sus clientes actúan como lo hacen. Integramos Ingeniería de Datos avanzada con análisis predictivo del consumidor.</p>
+                <span class="tag">Evidence-Based Strategy</span>
+                <h1>Economía <b>Predictiva.</b></h1>
+                <p>Aplicamos ciencia de datos avanzada y modelado econométrico para resolver problemas de alta complejidad en mercados dinámicos.</p>
+            </div>
+            <div class="hero-visual"></div>
+        </section>
+
+        <section class="maestrias">
+            <div class="m-card">
+                <h3>Economía Aplicada</h3>
+                <p>Modelado de variables macro y micro para la previsión de escenarios financieros y optimización de recursos corporativos.</p>
+            </div>
+            <div class="m-card">
+                <h3>Data Science & Big Data</h3>
+                <p>Arquitectura de algoritmos de aprendizaje automático para extraer valor de grandes volúmenes de información no estructurada.</p>
+            </div>
+            <div class="m-card">
+                <h3>BI & Consumer Behavior</h3>
+                <p>Análisis de patrones de consumo para diseñar estrategias de mercado basadas en la respuesta real del usuario.</p>
             </div>
         </section>
 
-        <section class="academic-rigor">
-            <div class="academic-box">
-                <h3>MSc Data Science & Big Data</h3>
-                <p>Especialización en arquitecturas masivas, minería de datos y despliegue de modelos de IA de alta escalabilidad.</p>
-            </div>
-            <div class="academic-box">
-                <h3>MSc BI & Consumer Behavior</h3>
-                <p>Análisis estratégico del proceso de decisión del cliente y visualización de datos orientada a resultados de negocio.</p>
-            </div>
-        </section>
-
-        <section class="capabilities">
-            <div class="cap-grid">
-                <div class="cap-item">
-                    <h3>Consumer Predictive Modeling</h3>
-                    <p>Anticipamos tendencias de compra y patrones de abandono (Churn) mediante algoritmos de aprendizaje supervisado.</p>
-                </div>
-                <div class="cap-item">
-                    <h3>Big Data Architecture</h3>
-                    <p>Diseño y optimización de infraestructuras para el procesamiento de volúmenes masivos de información en tiempo real.</p>
-                </div>
-                <div class="cap-item">
-                    <h3>Strategic BI</h3>
-                    <p>Transformamos datos crudos en tableros de mando ejecutivos que responden a preguntas críticas de rentabilidad.</p>
-                </div>
-            </div>
-        </section>
+        <div class="data-break"></div>
 
         <section class="contact">
-            <div>
-                <h2 style="font-size: 3.5rem; line-height: 0.9;">Tome decisiones basadas en evidencia.</h2>
-                <p style="color: var(--text-dim); margin-top: 30px;">Hablemos sobre cómo su infraestructura de datos puede predecir el futuro de su mercado.</p>
+            <div class="contact-text">
+                <h2>Certidumbre en un mundo volátil.</h2>
+                <p style="color: var(--text-dim); margin-top: 2rem;">Usted necesita transformar datos en EBITDA. Nosotros proporcionamos el rigor científico para lograrlo.</p>
             </div>
-            <div style="background: #0a0a0c; padding: 60px; border: 1px solid var(--ui-border);">
+            <div class="form-ui">
                 <form>
-                    <input type="email" placeholder="Email Corporativo" style="width:100%; background:none; border:none; border-bottom:1px solid var(--ui-border); color:white; padding:15px 0; margin-bottom:30px; outline:none;" required>
-                    <button type="submit" class="btn-prime">Solicitar Auditoría</button>
+                    <div class="field">
+                        <label>Corporación</label>
+                        <input type="text" required>
+                    </div>
+                    <div class="field">
+                        <label>E-mail Directivo</label>
+                        <input type="email" required>
+                    </div>
+                    <div class="field">
+                        <label>Objetivo Estratégico</label>
+                        <textarea rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn">Solicitar Auditoría de Datos</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <div>© 2025 KAIRON ANALYTICS / ALTO IMPACTO EN DATOS</div>
-        <div>DATA SCIENCE & CONSUMER BEHAVIOR</div>
+        <div>© 2025 Kairon Analytics Group / Msc. Economics & Data Science</div>
+        <div>Integridad · Rigor · Resultados</div>
     </footer>
 
 </body>
