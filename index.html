@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kairon Analytics | Strategic Data Intelligence</title>
+    <title>Kairon Analytics | Consultoría Estratégica en Datos e IA</title>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;500;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -26,7 +26,6 @@
 
         h1, h2, h3 { font-family: 'Outfit', sans-serif; text-transform: uppercase; letter-spacing: -1px; }
 
-        /* HEADER ESTRUCTURAL */
         header {
             display: flex;
             justify-content: space-between;
@@ -47,7 +46,7 @@
 
         .logo span { color: var(--cyan-accent); font-weight: 200; }
 
-        /* HERO - IMPACTO DE ALTA FIDELIDAD */
+        /* HERO - FOCO EN EL DOBLE PERFIL */
         .hero {
             height: 100vh;
             display: flex;
@@ -65,14 +64,14 @@
             width: 60%;
             height: 100%;
             background: linear-gradient(to left, var(--bg-black) 10%, transparent),
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
+                        url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070');
             background-size: cover;
             background-position: center;
-            opacity: 0.3;
-            filter: saturate(0);
+            opacity: 0.25;
+            filter: grayscale(1);
         }
 
-        .hero-content { position: relative; z-index: 2; max-width: 900px; }
+        .hero-content { position: relative; z-index: 2; max-width: 1000px; }
 
         .hero-label {
             color: var(--cyan-accent);
@@ -84,8 +83,8 @@
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 7rem);
-            line-height: 0.85;
+            font-size: clamp(2.5rem, 6vw, 5.5rem);
+            line-height: 0.9;
             margin-bottom: 2.5rem;
         }
 
@@ -94,101 +93,63 @@
         .hero p {
             font-size: 1.3rem;
             color: var(--text-dim);
-            max-width: 500px;
+            max-width: 650px;
             font-weight: 300;
             line-height: 1.6;
         }
 
-        /* SECCIÓN DE CAPACIDADES - GRID TÉCNICO */
-        .capabilities {
-            padding: 140px 6%;
-            background: linear-gradient(to bottom, #08080a, #050507);
-        }
-
-        .section-header {
+        /* SECCIÓN DE EXPERTISE ACADÉMICO */
+        .academic-rigor {
+            padding: 100px 6%;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            margin-bottom: 80px;
-            align-items: flex-end;
+            gap: 50px;
+            background: #08080a;
+            border-bottom: 1px solid var(--ui-border);
         }
 
-        .section-header h2 { font-size: 3.5rem; }
+        .academic-box {
+            border: 1px solid var(--ui-border);
+            padding: 40px;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .academic-box h3 {
+            font-size: 0.8rem;
+            color: var(--cyan-accent);
+            margin-bottom: 15px;
+        }
+
+        /* GRID DE SERVICIOS */
+        .capabilities { padding: 120px 6%; }
 
         .cap-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            border-top: 1px solid var(--ui-border);
+            gap: 2px;
+            background: var(--ui-border);
+            border: 1px solid var(--ui-border);
         }
 
         .cap-item {
             padding: 60px 40px;
-            border-right: 1px solid var(--ui-border);
-            border-bottom: 1px solid var(--ui-border);
+            background: var(--bg-black);
             transition: all 0.4s ease;
         }
 
-        .cap-item:hover { background: #0a0a0f; }
+        .cap-item:hover { background: #0c0c12; }
 
-        .cap-num { color: var(--cyan-accent); font-size: 0.7rem; font-weight: 800; margin-bottom: 20px; display: block; }
+        .cap-item h3 { font-size: 1.2rem; margin-bottom: 1.5rem; color: var(--text-primary); }
 
-        .cap-item h3 { font-size: 1.5rem; margin-bottom: 1.5rem; letter-spacing: 1px; }
+        .cap-item p { color: var(--text-dim); font-size: 0.9rem; }
 
-        .cap-item p { color: var(--text-dim); font-size: 0.95rem; line-height: 1.7; }
-
-        /* IMAGEN DE TRANSICIÓN - WEB INFRASTRUCTURE */
-        .visual-anchor {
-            height: 500px;
-            background: url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?auto=format&fit=crop&q=80&w=2072') fixed center/cover;
-            filter: grayscale(1) brightness(0.4);
-            border-top: 1px solid var(--ui-border);
-            border-bottom: 1px solid var(--ui-border);
-        }
-
-        /* CONVERSIÓN - CONTACTO EJECUTIVO */
+        /* CONTACTO */
         .contact {
             padding: 140px 6%;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 100px;
         }
-
-        .contact-ui {
-            background: #0a0a0c;
-            padding: 80px;
-            border: 1px solid var(--ui-border);
-            position: relative;
-        }
-
-        .contact-ui::after {
-            content: ''; position: absolute; top: -2px; left: -2px; width: 60px; height: 60px;
-            border-top: 2px solid var(--cyan-accent); border-left: 2px solid var(--cyan-accent);
-        }
-
-        .field { margin-bottom: 40px; }
-
-        .field label {
-            display: block;
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            color: var(--text-dim);
-            margin-bottom: 15px;
-        }
-
-        input, textarea {
-            width: 100%;
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid var(--ui-border);
-            color: var(--text-primary);
-            padding: 15px 0;
-            font-family: inherit;
-            font-size: 1.2rem;
-            outline: none;
-            transition: 0.3s;
-        }
-
-        input:focus { border-bottom: 1px solid var(--cyan-accent); }
 
         .btn-prime {
             background: var(--cyan-accent);
@@ -203,8 +164,6 @@
             transition: 0.3s;
         }
 
-        .btn-prime:hover { background: #fff; transform: translateY(-3px); }
-
         footer {
             padding: 60px 6%;
             border-top: 1px solid var(--ui-border);
@@ -216,10 +175,8 @@
             text-transform: uppercase;
         }
 
-        @media (max-width: 1024px) {
-            .hero-bg { display: none; }
-            .section-header, .cap-grid, .contact { grid-template-columns: 1fr; }
-            .cap-item { border-right: none; }
+        @media (max-width: 900px) {
+            .academic-rigor, .cap-grid, .contact { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -233,67 +190,57 @@
         <section class="hero">
             <div class="hero-bg"></div>
             <div class="hero-content">
-                <span class="hero-label">High-Value Data Intelligence</span>
-                <h1>Precision <b>is not</b> optional.</h1>
-                <p>Usted no busca visualización, busca gobernanza estratégica. Diseñamos infraestructuras de datos para organizaciones que operan bajo tolerancia cero al error.</p>
+                <span class="hero-label">Ciencia de Datos & Consumer Intelligence</span>
+                <h1>Ciencia aplicada al <b>Comportamiento Humano.</b></h1>
+                <p>Usted no solo necesita Big Data; necesita entender por qué sus clientes actúan como lo hacen. Integramos Ingeniería de Datos avanzada con análisis predictivo del consumidor.</p>
+            </div>
+        </section>
+
+        <section class="academic-rigor">
+            <div class="academic-box">
+                <h3>MSc Data Science & Big Data</h3>
+                <p>Especialización en arquitecturas masivas, minería de datos y despliegue de modelos de IA de alta escalabilidad.</p>
+            </div>
+            <div class="academic-box">
+                <h3>MSc BI & Consumer Behavior</h3>
+                <p>Análisis estratégico del proceso de decisión del cliente y visualización de datos orientada a resultados de negocio.</p>
             </div>
         </section>
 
         <section class="capabilities">
-            <div class="section-header">
-                <h2>Operational Excellence.</h2>
-                <p style="color: var(--text-dim); max-width: 400px; font-weight: 300;">Arquitectura técnica diseñada para la protección y explotación de activos de información críticos.</p>
-            </div>
-            
             <div class="cap-grid">
                 <div class="cap-item">
-                    <span class="cap-num">01 / ARCHITECTURE</span>
-                    <h3>Ingeniería de Infraestructura</h3>
-                    <p>Diseño de ecosistemas de datos escalables con integridad garantizada y latencia optimizada para procesos de alta demanda.</p>
+                    <h3>Consumer Predictive Modeling</h3>
+                    <p>Anticipamos tendencias de compra y patrones de abandono (Churn) mediante algoritmos de aprendizaje supervisado.</p>
                 </div>
                 <div class="cap-item">
-                    <span class="cap-num">02 / PREDICTION</span>
-                    <h3>Inteligencia Predictiva</h3>
-                    <p>Modelado matemático de grado industrial para la mitigación proactiva de riesgos y la optimización de rendimientos operativos.</p>
+                    <h3>Big Data Architecture</h3>
+                    <p>Diseño y optimización de infraestructuras para el procesamiento de volúmenes masivos de información en tiempo real.</p>
                 </div>
                 <div class="cap-item">
-                    <span class="cap-num">03 / GOVERNANCE</span>
-                    <h3>Estrategia de Gobernanza</h3>
-                    <p>Protocolos de seguridad y control de calidad del dato que aseguran una única fuente de verdad para la toma de decisiones directivas.</p>
+                    <h3>Strategic BI</h3>
+                    <p>Transformamos datos crudos en tableros de mando ejecutivos que responden a preguntas críticas de rentabilidad.</p>
                 </div>
             </div>
         </section>
 
-        <div class="visual-anchor"></div>
-
         <section class="contact">
-            <div class="contact-text">
-                <h2 style="font-size: 4rem; line-height: 0.9; margin-bottom: 30px;">Inicie la auditoría estratégica.</h2>
-                <p style="color: var(--text-dim); font-size: 1.2rem; font-weight: 300;">Un consultor senior evaluará la madurez técnica de su infraestructura actual.</p>
+            <div>
+                <h2 style="font-size: 3.5rem; line-height: 0.9;">Tome decisiones basadas en evidencia.</h2>
+                <p style="color: var(--text-dim); margin-top: 30px;">Hablemos sobre cómo su infraestructura de datos puede predecir el futuro de su mercado.</p>
             </div>
-            <div class="contact-ui">
+            <div style="background: #0a0a0c; padding: 60px; border: 1px solid var(--ui-border);">
                 <form>
-                    <div class="field">
-                        <label>Institución Corporativa</label>
-                        <input type="text" required>
-                    </div>
-                    <div class="field">
-                        <label>Canal de Comunicación Directo</label>
-                        <input type="email" placeholder="email@corporativo.com" required>
-                    </div>
-                    <div class="field">
-                        <label>Descripción del Desafío</label>
-                        <textarea rows="3"></textarea>
-                    </div>
-                    <button type="submit" class="btn-prime">Solicitar Diagnóstico</button>
+                    <input type="email" placeholder="Email Corporativo" style="width:100%; background:none; border:none; border-bottom:1px solid var(--ui-border); color:white; padding:15px 0; margin-bottom:30px; outline:none;" required>
+                    <button type="submit" class="btn-prime">Solicitar Auditoría</button>
                 </form>
             </div>
         </section>
     </main>
 
     <footer>
-        <div>© 2025 KAIRON ANALYTICS / ADVANCED DATA GROUP</div>
-        <div>LONDON / MADRID / SINGAPORE</div>
+        <div>© 2025 KAIRON ANALYTICS / ALTO IMPACTO EN DATOS</div>
+        <div>DATA SCIENCE & CONSUMER BEHAVIOR</div>
     </footer>
 
 </body>
