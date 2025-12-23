@@ -3,16 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIRON | Strategic Decision Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700;900&family=IBM+Plex+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <title>KAIRON | Precision Intelligence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;700;900&family=Cormorant+Garamond:ital,wght@1,600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #050505;
-            --text: #ffffff;
-            --accent: #e5e5e5;
-            --dim: #555555;
-            --border: #1a1a1a;
-            --gold: #c5a059; /* Un toque de oro sutil para indicar estatus */
+            --bg: #ffffff;
+            --text: #000000;
+            --subtle: #666666;
+            --border: #eeeeee;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -23,184 +21,159 @@
             color: var(--text);
             line-height: 1.1;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
         }
 
-        .mono { font-family: 'IBM Plex Mono', monospace; text-transform: uppercase; letter-spacing: 3px; font-size: 0.7rem; }
-
-        /* NAVEGACIÓN QUIRÚRGICA */
         nav {
-            padding: 2.5rem 5%;
+            padding: 3.5rem 6%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 1px solid var(--border);
-            position: fixed;
-            width: 100%;
-            background: rgba(5,5,5,0.95);
-            backdrop-filter: blur(10px);
-            z-index: 1000;
         }
 
-        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: -1px; }
+        .logo { font-weight: 900; font-size: 1.4rem; letter-spacing: 2px; text-transform: uppercase; }
+        .meta { font-size: 0.7rem; letter-spacing: 2px; text-transform: uppercase; color: var(--subtle); }
 
-        /* HERO: EL IMPACTO DE LA CERTEZA */
         .hero {
-            padding: 15rem 5% 8rem 5%;
-            border-bottom: 1px solid var(--border);
+            padding: 8rem 6% 10rem 6%;
+            max-width: 1400px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 10vw, 9rem);
+            font-size: clamp(3.5rem, 8vw, 8rem);
             font-weight: 900;
-            letter-spacing: -0.06em;
+            letter-spacing: -5px;
             margin-bottom: 5rem;
             line-height: 0.85;
         }
 
-        .hero h1 span { color: var(--dim); }
-
-        .hero-footer {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 100px;
-            align-items: flex-end;
+        .hero h1 i {
+            font-family: 'Cormorant Garamond', serif;
+            font-weight: 600;
+            letter-spacing: -1px;
+            color: var(--subtle);
         }
 
-        .hero-footer p {
+        .hero p {
             font-size: 2rem;
             font-weight: 300;
             line-height: 1.2;
-            color: var(--accent);
-            max-width: 700px;
+            max-width: 850px;
+            color: var(--subtle);
+            letter-spacing: -1px;
         }
 
-        /* LAS TRES TESIS (MAESTRÍAS CONVERTIDAS EN VALOR) */
-        .framework {
+        .grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
+            border-top: 1px solid var(--border);
             border-bottom: 1px solid var(--border);
         }
 
-        .f-box {
-            padding: 8rem 4rem;
+        .cell {
+            padding: 7rem 4%;
             border-right: 1px solid var(--border);
-            transition: all 0.5s ease;
         }
 
-        .f-box:hover { background: #0a0a0a; }
-        .f-box:last-child { border-right: none; }
+        .cell:last-child { border-right: none; }
 
-        .f-box h2 { font-size: 2.5rem; margin-bottom: 2rem; font-weight: 700; letter-spacing: -2px; }
-        .f-box p { font-size: 1.1rem; color: var(--dim); line-height: 1.6; }
+        .cell span { font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 3px; display: block; margin-bottom: 2.5rem; color: #aaa; }
+        .cell h2 { font-size: 2.5rem; font-weight: 700; margin-bottom: 2rem; letter-spacing: -2px; }
+        .cell p { font-size: 1.1rem; color: var(--subtle); line-height: 1.6; font-weight: 400; }
 
-        /* SECCIÓN DE "INSIGHT" */
-        .statement {
-            padding: 12rem 5%;
-            background: #fff;
-            color: #000;
-        }
-
-        .statement h2 { font-size: 4.5rem; font-weight: 900; letter-spacing: -4px; line-height: 0.9; margin-bottom: 4rem; }
-        .statement p { font-size: 1.8rem; font-weight: 400; max-width: 900px; color: #333; }
-
-        /* CALL TO ACTION: EXCLUSIVIDAD */
-        .cta-section {
-            padding: 12rem 5%;
+        .impact {
+            padding: 12rem 6%;
+            background: #000;
+            color: #fff;
             text-align: left;
         }
 
-        .cta-section h2 { font-size: 6rem; font-weight: 900; letter-spacing: -5px; margin-bottom: 4rem; }
+        .impact h2 { font-size: clamp(3rem, 6vw, 5rem); font-weight: 900; letter-spacing: -4px; margin-bottom: 4rem; line-height: 0.9; }
+        .impact p { font-size: 1.6rem; font-weight: 300; max-width: 900px; opacity: 0.6; }
 
-        .btn-main {
+        .cta {
+            padding: 15rem 6%;
+            text-align: center;
+        }
+
+        .btn {
             display: inline-block;
-            background: var(--text);
-            color: var(--bg);
+            background: #000;
             padding: 2.5rem 6rem;
-            font-size: 1.5rem;
             font-weight: 900;
+            font-size: 1.3rem;
             text-decoration: none;
+            color: #fff;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            transition: 0.3s cubic-bezier(0.19, 1, 0.22, 1);
+            letter-spacing: 3px;
+            transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
         }
 
-        .btn-main:hover { background: var(--gold); transform: translateY(-10px); }
+        .btn:hover { transform: scale(1.05); box-shadow: 0 40px 80px rgba(0,0,0,0.1); }
 
-        /* FOOTER: AUTORIDAD TÉCNICA */
         footer {
-            padding: 5rem 5%;
+            padding: 6rem 6%;
             border-top: 1px solid var(--border);
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 700;
         }
 
-        .creds { text-align: right; }
-        .creds p { font-size: 0.8rem; color: var(--dim); margin-bottom: 0.5rem; font-weight: 600; }
-
-        @media (max-width: 1024px) {
-            .hero-footer, .framework, footer { grid-template-columns: 1fr; gap: 40px; }
-            .f-box { border-right: none; border-bottom: 1px solid var(--border); }
-            .hero h1 { font-size: 4.5rem; }
-            .statement h2 { font-size: 3rem; }
-            .cta-section h2 { font-size: 3.5rem; }
+        @media (max-width: 900px) {
+            .grid { grid-template-columns: 1fr; }
+            .cell { border-right: none; border-bottom: 1px solid var(--border); }
+            .hero h1 { font-size: 4rem; }
+            .impact h2 { font-size: 2.8rem; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div class="logo">KAIRON.</div>
-        <div class="mono" style="color: var(--gold);">High-Stakes Execution</div>
+        <div class="logo">Kairon.</div>
+        <div class="meta">High-Stakes Decision Architecture</div>
     </nav>
 
     <main>
         <section class="hero">
-            <div class="mono" style="margin-bottom: 3rem; color: var(--dim);">[ Strategic Asset Intelligence ]</div>
-            <h1>DECISIONS <span>BASED ON</span> CERTAINTY.</h1>
-            <div class="hero-footer">
-                <p>No somos consultores. Somos ingenieros de resultados. Transformamos la complejidad económica en una ventaja competitiva de ejecución inmediata.</p>
-                <div class="mono" style="color: var(--dim); text-align: right;">Op. Model: Applied Intel // Q1-2025</div>
+            <h1>Intelligence <i>as a</i> Weapon.</h1>
+            <p>Convertimos la complejidad en <b>certeza operativa.</b> No gestionamos datos; diseñamos las estructuras que permiten a las organizaciones dominar su mercado.</p>
+        </section>
+
+        <section class="grid">
+            <div class="cell">
+                <span>Estrategia</span>
+                <h2>Captura de Margen.</h2>
+                <p>Identificación de ineficiencias financieras mediante modelado avanzado. Transformamos el análisis de costos en optimización directa del EBITDA.</p>
+            </div>
+            <div class="cell">
+                <span>Infraestructura</span>
+                <h2>Ingeniería de Escala.</h2>
+                <p>Desarrollo de sistemas que procesan variables masivas para convertirlas en radares de ejecución. Datos transformados en un activo de alto rendimiento.</p>
+            </div>
+            <div class="cell">
+                <span>Mercado</span>
+                <h2>Predicción Real.</h2>
+                <p>Decodificación de la psicología del consumidor. Anticipamos la demanda mediante modelos de comportamiento antes de que el mercado reaccione.</p>
             </div>
         </section>
 
-        <section class="framework">
-            <div class="f-box">
-                <div class="mono" style="margin-bottom: 2rem; color: var(--gold);">01. Economics</div>
-                <h2>Causalidad.</h2>
-                <p>Aislamos el ruido del mercado. Modelamos ineficiencias financieras con rigor econométrico para blindar y expandir su rentabilidad neta.</p>
-            </div>
-            <div class="f-box">
-                <div class="mono" style="margin-bottom: 2rem; color: var(--gold);">02. Data Science</div>
-                <h2>Escala.</h2>
-                <p>Ingeniería de datos de grado industrial. Infraestructuras masivas diseñadas para convertir variables complejas en radares de ejecución en tiempo real.</p>
-            </div>
-            <div class="f-box">
-                <div class="mono" style="margin-bottom: 2rem; color: var(--gold);">03. Behavior</div>
-                <h2>Predicción.</h2>
-                <p>Decodificamos el comportamiento. Anticipamos movimientos de mercado mediante ciencia conductual aplicada sobre flujos masivos de datos.</p>
-            </div>
+        <section class="impact">
+            <h2>Resultados, no reportes.</h2>
+            <p>La información es un pasivo si no genera ejecución inmediata. Nuestra intervención garantiza que su arquitectura tecnológica trabaje exclusivamente para su rentabilidad neta.</p>
         </section>
 
-        <section class="statement">
-            <h2>Usted no necesita más datos.<br>Necesita el control.</h2>
-            <p>La mayoría de las empresas recolectan información como un gasto pasivo. Nuestra intervención convierte esa infraestructura en un sistema de dominio de mercado.</p>
-        </section>
-
-        <section class="cta-section">
-            <h2>¿Listo para la intervención?</h2>
-            <a href="mailto:admin@kairon.com" class="btn-main">Agendar Diagnóstico</a>
-            <p class="mono" style="margin-top: 4rem; color: var(--dim);">Aceptando 2 nuevos proyectos de alto impacto por trimestre.</p>
+        <section class="cta">
+            <a href="mailto:admin@kairon.com" class="btn">Agendar Intervención</a>
+            <p style="margin-top: 4rem; font-size: 0.7rem; letter-spacing: 3px; color: #bbb; text-transform: uppercase;">Disponibilidad limitada a dos intervenciones por trimestre</p>
         </section>
     </main>
 
     <footer>
-        <div class="logo">KAIRON GROUP</div>
-        <div class="creds">
-            <p>MSc. APPLIED ECONOMICS</p>
-            <p>MSc. DATA SCIENCE & BIG DATA</p>
-            <p>MSc. BUSINESS INTELLIGENCE & BEHAVIOR</p>
-        </div>
+        <div>KAIRON STRATEGIC UNIT</div>
+        <div>© 2025</div>
     </footer>
 
 </body>
