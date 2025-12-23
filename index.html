@@ -3,194 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KAIRON | Intervención Estratégica de Datos</title>
-    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&family=Inter:wght@900&display=swap" rel="stylesheet">
+    <title>KAIRON | Ejecución Estratégica</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;900&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --neon: #00f2ff;
-            --bg: #030303;
-            --danger: #ff3e3e;
+            --red: #ff0000;
+            --bg: #000000;
             --white: #ffffff;
+            --border: #222;
         }
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
+        * { margin: 0; padding: 0; box-sizing: border-box; cursor: crosshair; }
 
         body {
-            font-family: 'JetBrains Mono', monospace;
+            font-family: 'Inter', sans-serif;
             background-color: var(--bg);
             color: var(--white);
-            line-height: 1.2;
+            line-height: 1;
         }
 
-        /* CABECERA DE ALTA PRECISIÓN */
+        .mono { font-family: 'JetBrains Mono', monospace; text-transform: uppercase; font-size: 0.7rem; letter-spacing: 2px; }
+
+        /* HEADER - RIGOR TOTAL */
         nav {
             padding: 2rem;
+            border-bottom: 1px solid var(--border);
             display: flex;
             justify-content: space-between;
-            border-bottom: 1px solid #222;
+            position: sticky;
+            top: 0;
+            background: var(--bg);
+            z-index: 100;
         }
 
-        .status { color: var(--neon); font-size: 0.7rem; }
-
-        /* HERO: EL PROBLEMA Y LA SOLUCIÓN */
+        /* HERO - EL GOLPE DE AUTORIDAD */
         .hero {
-            padding: 8rem 2rem;
-            border-bottom: 1px solid #222;
+            padding: 10rem 2rem 5rem 2rem;
+            border-bottom: 1px solid var(--border);
         }
 
         .hero h1 {
-            font-family: 'Inter', sans-serif;
-            font-size: clamp(3rem, 10vw, 8rem);
+            font-size: clamp(4rem, 18vw, 15rem);
+            font-weight: 900;
+            letter-spacing: -0.05em;
             line-height: 0.8;
-            margin-bottom: 3rem;
+            margin-bottom: 5rem;
         }
 
-        .hero h1 span { color: var(--bg); -webkit-text-stroke: 1.5px var(--white); }
+        .hero h1 span { color: var(--red); }
 
-        /* EL ARGUMENTO DE VENTA (LO QUE DUELE) */
-        .pain-points {
+        .hero-meta {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 4rem 2rem;
-            background: #080808;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
         }
 
-        .point {
-            padding: 2rem;
-            border-left: 2px solid var(--danger);
-        }
+        .hero-meta p { font-size: 1.8rem; line-height: 1.1; max-width: 600px; font-weight: 400; }
 
-        .point h3 { font-size: 0.8rem; color: var(--danger); margin-bottom: 1rem; }
-        .point p { font-size: 1.2rem; font-weight: 700; }
-
-        /* LA OFERTA (LA SOLUCIÓN DE TRIPLE MAESTRÍA) */
-        .solution-grid {
-            padding: 0;
+        /* SECCIÓN DE "HECHOS" (NO MAESTRÍAS) */
+        .execution {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            border-bottom: 1px solid #222;
+            border-bottom: 1px solid var(--border);
         }
 
-        .feature {
+        .exec-box {
             padding: 6rem 2rem;
-            border: 1px solid #222;
+            border: 0.5px solid var(--border);
         }
 
-        .feature h2 { font-size: 2.5rem; margin-bottom: 2rem; color: var(--neon); }
-        .feature p { font-size: 1.1rem; color: #aaa; max-width: 500px; }
+        .exec-box span { color: var(--red); display: block; margin-bottom: 2rem; }
 
-        /* SECCIÓN VISUAL (SIN PERSONAS) */
-        .visual-data {
-            height: 500px;
-            background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), 
-                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2000');
+        .exec-box h2 { font-size: 3rem; margin-bottom: 2rem; letter-spacing: -2px; }
+
+        .exec-box p { font-size: 1.1rem; color: #888; line-height: 1.5; max-width: 450px; }
+
+        /* IMAGEN DE INFRAESTRUCTURA DE DATOS */
+        .visual {
+            height: 70vh;
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                        url('https://images.unsplash.com/photo-1550751827-4bd374c3f58b?auto=format&fit=crop&q=80&w=2070');
             background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
         }
 
-        /* CONVERSIÓN: FILTRO DE CALIDAD */
+        /* CIERRE: CONVERSIÓN DE ALTO VALOR */
         .cta {
-            padding: 8rem 2rem;
+            padding: 10rem 2rem;
             text-align: center;
         }
 
-        .cta h2 { font-size: 4rem; margin-bottom: 4rem; }
+        .cta h2 { font-size: clamp(3rem, 10vw, 8rem); margin-bottom: 5rem; letter-spacing: -4px; }
 
-        .btn-call {
-            background: var(--neon);
-            color: var(--bg);
-            padding: 2rem 4rem;
+        .btn {
+            display: inline-block;
+            background: var(--red);
+            color: white;
+            padding: 2.5rem 6rem;
+            font-size: 2rem;
             font-weight: 900;
             text-decoration: none;
-            display: inline-block;
-            font-size: 1.5rem;
-            transition: 0.3s;
+            transition: 0.2s;
         }
 
-        .btn-call:hover { transform: skewX(-10deg); background: var(--white); }
+        .btn:hover { background: var(--white); color: var(--bg); transform: scale(1.05); }
 
         footer {
-            padding: 2rem;
-            font-size: 0.6rem;
+            padding: 3rem;
             display: flex;
             justify-content: space-between;
-            border-top: 1px solid #222;
-            opacity: 0.5;
+            border-top: 1px solid var(--border);
+            color: #444;
         }
 
         @media (max-width: 768px) {
-            .solution-grid { grid-template-columns: 1fr; }
+            .hero-meta, .execution { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
 
     <nav>
-        <div>KAIRON_ANALYTICS</div>
-        <div class="status">● SISTEMA OPERATIVO / 2025</div>
+        <div class="mono">KAIRON / ESTRATEGIA DE CAPITAL</div>
+        <div class="mono">DISPONIBILIDAD: Q1 2025</div>
     </nav>
 
     <main>
         <section class="hero">
-            <h1>NO MÁS <span>DATOS MUERTOS.</span></h1>
-            <p style="font-size: 2rem; max-width: 800px; margin-top: 2rem;">
-                La mayoría de las empresas se ahogan en información mientras mueren por falta de decisiones. Nosotros instalamos <b>Sistemas de Ejecución Crítica.</b>
-            </p>
-        </section>
-
-        <section class="pain-points">
-            <div class="point">
-                <h3>EL PROBLEMA 01</h3>
-                <p>Usted tiene Big Data, pero sigue decidiendo por "instinto" o corazonadas caras.</p>
-            </div>
-            <div class="point">
-                <h3>EL PROBLEMA 02</h3>
-                <p>Sus modelos predicen el pasado, pero fallan al anticipar el comportamiento real de su cliente.</p>
-            </div>
-            <div class="point">
-                <h3>EL PROBLEMA 03</h3>
-                <p>Su infraestructura de datos es un gasto pasivo, no un activo que genere flujo de caja.</p>
+            <h1>MONEY <span>TALKS.</span></h1>
+            <div class="hero-meta">
+                <p>Convertimos infraestructuras de datos en máquinas de flujo de caja. Si no hay retorno, no es inteligencia.</p>
+                <div class="mono" style="color: #444;">Combinamos teoría económica, ingeniería de datos masiva y ciencia conductual para liquidar la incertidumbre.</div>
             </div>
         </section>
 
-        <section class="solution-grid">
-            <div class="feature">
-                <h2>Ingeniería Económica.</h2>
-                <p>Aplicamos rigor econométrico para encontrar la fuga de dinero que sus contadores no pueden ver. Optimizamos márgenes donde otros ven costos.</p>
+        <section class="execution">
+            <div class="exec-box">
+                <span class="mono">01. Arbitraje de Ineficiencia</span>
+                <h2>Encontramos el dinero que está perdiendo.</h2>
+                <p>Utilizamos modelos econométricos para detectar fugas operativas que el software estándar ignora. No analizamos, corregimos la rentabilidad.</p>
             </div>
-            <div class="feature">
-                <h2>Sistemas Autónomos.</h2>
-                <p>Diseñamos infraestructuras de Big Data que no solo almacenan, sino que procesan y recomiendan acciones en tiempo real bajo estándares industriales.</p>
+            <div class="exec-box">
+                <span class="mono">02. Ingeniería de Datos</span>
+                <h2>Infraestructura para el dominio.</h2>
+                <p>Construimos sistemas de Big Data de grado industrial. Sus datos dejan de ser un archivo histórico para convertirse en un radar de oportunidades en tiempo real.</p>
             </div>
-            <div class="feature">
-                <h2>Behavioral Design.</h2>
-                <p>Entendemos la ciencia detrás de la compra. Modelamos patrones de consumo para que usted deje de perseguir clientes y empiece a predecirlos.</p>
+            <div class="exec-box">
+                <span class="mono">03. Arquitectura Conductual</span>
+                <h2>Predicción de la demanda real.</h2>
+                <p>No adivinamos qué quiere el cliente. Aplicamos ciencia del comportamiento sobre patrones masivos para forzar la ventaja competitiva en su mercado.</p>
             </div>
-            <div class="feature">
-                <h2>Intervención Total.</h2>
-                <p>No somos consultores de PowerPoint. Somos ingenieros de resultados. Si no hay impacto en su EBITDA, no nos interesa el proyecto.</p>
+            <div class="exec-box">
+                <span class="mono">04. Resultados Críticos</span>
+                <h2>Impacto directo en el EBITDA.</h2>
+                <p>No entregamos reportes de 40 páginas. Instalamos soluciones técnicas que se reflejan en su balance financiero. Punto.</p>
             </div>
         </section>
 
-        <div class="visual-data">
-            <div style="border: 1px solid var(--neon); padding: 2rem; background: rgba(0,0,0,0.8);">
-                <span style="color: var(--neon);">[ANALYZING_MARKET_INEFFICIENCIES...]</span>
+        <div class="visual">
+            <div style="border: 1px solid var(--red); padding: 2rem; background: rgba(0,0,0,0.9); color: var(--red);" class="mono">
+                CRITICAL_SYSTEM_ACTIVE // DATA_EXTRACTION_SUCCESS
             </div>
         </div>
 
         <section class="cta">
-            <h2>¿Desea una solución o un reporte?</h2>
-            <a href="mailto:tuemail@dominio.com" class="btn-call">INICIAR DIAGNÓSTICO</a>
-            <p style="margin-top: 3rem; opacity: 0.5;">* Solo para organizaciones con facturación superior a [X]M o retos de alta complejidad.</p>
+            <h2>¿Quiere ganar o solo observar?</h2>
+            <a href="mailto:tuemail@dominio.com" class="btn">ORDENAR AUDITORÍA</a>
         </section>
     </main>
 
     <footer>
-        <div>ESTRATEGIA BASADA EN EVIDENCIA</div>
-        <div>MSc. ECONOMÍA / MSc. DATA SCIENCE / MSc. BI</div>
+        <div class="mono">KAIRON ANALYTICS | BEYOND EVIDENCE</div>
+        <div class="mono">MSc. ECON / MSc. DATA / MSc. BI</div>
     </footer>
 
 </body>
